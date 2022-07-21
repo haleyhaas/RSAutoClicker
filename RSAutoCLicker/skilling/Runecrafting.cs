@@ -16,109 +16,96 @@
         public void Do()
         {
             Console.WriteLine($"Doing {nameof(Runecrafting)}");
-          
+
             // get point to assign to each part of the runecrafting process
-            var point = _mouseHandler.GetCursorPosition();
+            //var point = _mouseHandler.GetCursorPosition();
 
             // bank
-            _mouseHandler.SmoothLeftClick(756, 326, isFast: true, withSleep: true);
+            _mouseHandler.SmoothLeftClick(1167, 290, isFast: true, withSleep: true);
             Thread.Sleep(3500);
 
             // deposit
-            _mouseHandler.SmoothLeftClick(974, 513, isFast: true);
+            _mouseHandler.SmoothLeftClick(1754, 454, isFast: true);
             Thread.Sleep(1000);
 
             if (_count > 0 && _count == 6)
             {
                 // wtihdraw stam pot
-                _mouseHandler.SmoothLeftClick(609, 295, true, true);
+                _mouseHandler.SmoothLeftClick(1386, 311, true, true);
 
                 // drink
-                _mouseHandler.SmoothLeftClick(975, 517, true, true);
+                _mouseHandler.SmoothLeftClick(1754, 454, true, true);
             }
-
+            _count = 8;
             if (_count == 8)
             {
-                // withdraw 1
-                _mouseHandler.SmoothLeftClick(516, 576, isFast: true);
-
-                // withdraw ring
-                _mouseHandler.SmoothLeftClick(659, 288, true, true);
-
                 // withdraw neck
-                _mouseHandler.SmoothLeftClick(704, 250, true, true);
-
-                //withdraw all
-                _mouseHandler.SmoothLeftClick(612, 578, isFast: true);
+                _mouseHandler.SmoothLeftClick(1383, 268, true, true);
 
                 // close bank
-                _mouseHandler.SmoothLeftClick(768, 68, isFast: true);
-
-                // equip ring
-                _mouseHandler.SmoothLeftClick(980, 515, isFast: true);
+                _mouseHandler.SmoothLeftClick(1445, 85, isFast: true);
+                Thread.Sleep(500);
 
                 // destroy necklace and confirm
-                _mouseHandler.SmoothLeftClick(1016, 511, isFast: true);
-                _mouseHandler.SmoothLeftClick(351, 658, isFast: true);
+                _mouseHandler.SmoothLeftClick(1754, 454, isFast: true);
+                Thread.Sleep(1500);
+                _mouseHandler.SmoothLeftClick(1200, 669, isFast: true);
 
                 // open bank
-                _mouseHandler.SmoothLeftClick(668, 405, isFast: true, withSleep: true);
+                _mouseHandler.SmoothLeftClick(1325, 387, isFast: true, withSleep: true);
                 Thread.Sleep(800);
                 _count = 0;
             }
 
             // withdraw essence
-            _mouseHandler.SmoothLeftClick(706, 141, isFast: true);
+            _mouseHandler.SmoothLeftClick(1381, 157, isFast: true);
             Thread.Sleep(200);
 
             if (_count > 0)
             {
                 // fill pouches
                 Thread.Sleep(150);
-                _mouseHandler.SmoothLeftClick(892, 515, isFast: true);
+                _mouseHandler.SmoothLeftClick(1625, 460, isFast: true);
                 Thread.Sleep(100);
-                _mouseHandler.SmoothLeftClick(892, 553);
+                _mouseHandler.SmoothLeftClick(1663, 460);
                 Thread.Sleep(100);
-                _mouseHandler.SmoothLeftClick(892, 591);
+                _mouseHandler.SmoothLeftClick(1701, 460);              
 
                 // withdraw essences
-                _mouseHandler.SmoothLeftClick(706, 141, isFast: true);
+                _mouseHandler.SmoothLeftClick(1384, 158, isFast: true);
             }
 
             // close bank
-            _mouseHandler.SmoothLeftClick(768, 68, isFast: true);
+            _mouseHandler.SmoothLeftClick(1447, 86, isFast: true);
 
-            // teleport spell, dueling ring teleport
-            _mouseHandler.SmoothLeftClick(698, 740, isFast: true);
-            _mouseHandler.SmoothRightClick(1013, 668);
-            Thread.Sleep(100);
-            _mouseHandler.SmoothLeftClick(996, 689);
-            Thread.Sleep(2200);
+            // teleport spell with ring
+            _mouseHandler.SmoothLeftClick(1628, 496, isFast: true);
+            Thread.Sleep(2600);
 
             // altar
-            _mouseHandler.SmoothLeftClick(223, 336, isFast: true);
+            _mouseHandler.SmoothLeftClick(1202, 117, isFast: true);
             Thread.Sleep(2550);
-            _mouseHandler.SmoothLeftClick(220, 348, isFast: true);
-            Thread.Sleep(5200);
+            _mouseHandler.SmoothLeftClick(1354, 158, isFast: true, true);
+            Thread.Sleep(4800);
             if (_lastRepair == 20)
             {
                 // magic spell book, NPC commune dark wizard
-                _mouseHandler.SmoothLeftClick(760, 743, isFast: true);
-                _mouseHandler.SmoothLeftClick(874, 532, isFast: true);
+                _mouseHandler.SmoothLeftClick(1781, 753, isFast: true);
+                _mouseHandler.SmoothLeftClick(1612, 472, isFast: true);
                 Thread.Sleep(500);
-                _mouseHandler.SmoothLeftClick(532, 256, isFast: true);
+                _mouseHandler.SmoothLeftClick(1211, 272, isFast: true);
                 Thread.Sleep(4500);
 
                 // talk to dark mage to repair
-                _mouseHandler.SmoothLeftClick(322, 708);
+                _mouseHandler.SmoothLeftClick(1172, 723);
                 Thread.Sleep(500);
 
                 // repair please
-                _mouseHandler.SmoothLeftClick(384, 672);
+                _mouseHandler.SmoothLeftClick(1176, 691);
                 Thread.Sleep(1000);
-                _mouseHandler.SmoothLeftClick(237, 709);
+                _mouseHandler.SmoothLeftClick(1080, 723);
                 Thread.Sleep(1000);
-                _mouseHandler.SmoothLeftClick(237, 709);
+                _mouseHandler.SmoothLeftClick(1080, 723);
 
                 // inventory
                 _mouseHandler.SmoothLeftClick(666, 737, isFast: true);
@@ -127,36 +114,36 @@
             }
 
             // magic imbue
-            _mouseHandler.SmoothLeftClick(760, 743, isFast: true);
-            _mouseHandler.SmoothLeftClick(959, 638, withSleep: true, isFast: true);
+            _mouseHandler.SmoothLeftClick(1781, 753, isFast: true);
+            _mouseHandler.SmoothLeftClick(1695, 580, withSleep: true, isFast: true);
 
             // inventory
-            _mouseHandler.SmoothLeftClick(665, 743, isFast: true);
+            _mouseHandler.SmoothLeftClick(1684, 758, isFast: true);
 
             // click earth rune on alt
-            _mouseHandler.SmoothLeftClick(936, 514, isFast: true);
-            _mouseHandler.SmoothLeftClick(838, 214, isFast: true, withSleep: true);
+            _mouseHandler.SmoothLeftClick(1671, 490, isFast: true);
+            _mouseHandler.SmoothLeftClick(1058, 99, isFast: true, withSleep: true);
             Thread.Sleep(4200);
-
-            // empty pouch
-            _mouseHandler.SmoothLeftClick(891, 516);
-            Thread.Sleep(100);
-            _mouseHandler.SmoothLeftClick(891, 553);
-            Thread.Sleep(100);
-            _mouseHandler.SmoothLeftClick(891, 591);
-            Thread.Sleep(150);
-
+            
             if (_count > 0)
             {
-                // click earth rune, altar again
-                _mouseHandler.SmoothLeftClick(936, 514, isFast: true);
+                // empty pouch
+                _mouseHandler.SmoothLeftClick(1625, 460, isFast: true);
                 Thread.Sleep(100);
-                _mouseHandler.SmoothLeftClick(685, 387, isFast: true);
+                _mouseHandler.SmoothLeftClick(1663, 460);
+                Thread.Sleep(100);
+                _mouseHandler.SmoothLeftClick(1701, 460);
+                Thread.Sleep(150);
+
+                // click earth rune, altar again
+                _mouseHandler.SmoothLeftClick(1674, 490, isFast: true);
+                Thread.Sleep(100);
+                _mouseHandler.SmoothLeftClick(1233, 342, isFast: true);
                 Thread.Sleep(200);
             }
 
             // crafting cape
-            _mouseHandler.SmoothLeftClick(893, 624, isFast: true);
+            _mouseHandler.SmoothLeftClick(1629, 527, isFast: true);
             Thread.Sleep(2300);
 
             _count++;
