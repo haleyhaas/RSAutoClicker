@@ -8,15 +8,9 @@
                 .SelectMany(s => s.GetTypes())
                 .Where(p => typeof(IScripter).IsAssignableFrom(p));
 
-            foreach(var t in types)
-            {
-                if(t == type)
-                {
-                    return CreateInstance<IScripter>(t, new MouseHandler());
-                }
-            }
-
-            return null;
+            var t = types.FirstOrDefault(x => x == type);
+            if (t == null) throw new ArgumentOutOfRangeException($"Could not find {nameof(IScripter)} type of {type.Name}");
+            return CreateInstance<IScripter>(t, new MouseHandler());
         }
 
         private static T CreateInstance<T>(Type t, params object[] paramArray)
