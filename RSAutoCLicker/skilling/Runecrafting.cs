@@ -6,21 +6,18 @@
     public class Runecrafting : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
-        private bool _doSkill;
         private int _count;
         private int _lastRepair;
-        public Runecrafting(IMouseHandler mouseHandler, bool doSkill = false)
+        public Runecrafting(IMouseHandler mouseHandler)
         {
-            _doSkill = doSkill;
             _mouseHandler = mouseHandler;
         }
 
         public void Do()
         {
-            if (!_doSkill) return;
-
             Console.WriteLine($"Doing {nameof(Runecrafting)}");
-
+          
+            // get point to assign to each part of the runecrafting process
             var point = _mouseHandler.GetCursorPosition();
 
             // bank

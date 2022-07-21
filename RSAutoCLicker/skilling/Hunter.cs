@@ -6,17 +6,13 @@
     public class Hunter : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
-        private bool _doSkill;
-        public Hunter(IMouseHandler mouseHandler, bool doSkill = false)
+        public Hunter(IMouseHandler mouseHandler)
         {
-            _doSkill = doSkill;
             _mouseHandler = mouseHandler;
         }
 
         public void Do()
         {
-            if (!_doSkill) return;
-
             Console.WriteLine($"Doing {nameof(Hunter)}");
 
             // box trap 1

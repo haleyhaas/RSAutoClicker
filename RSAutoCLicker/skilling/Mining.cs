@@ -6,18 +6,14 @@
     public class Mining : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
-        private bool _doSkill;
 
-        public Mining(IMouseHandler mouseHandler, bool doSkill = false)
+        public Mining(IMouseHandler mouseHandler)
         {
-            _doSkill = doSkill;
             _mouseHandler = mouseHandler;
         }
 
         public void Do()
         {
-            if (!_doSkill) return;
-
             Console.WriteLine($"Doing {nameof(Mining)}");
 
             // ore 1
