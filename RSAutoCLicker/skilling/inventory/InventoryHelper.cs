@@ -21,7 +21,7 @@
                 var yCounter = 0;
                 for (var i = 0; i < 27; i++)
                 {
-                    _mouseHandler.SmoothLeftClick(bottomRightSlotX, bottomRightSlotY);
+                    _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
                     if (moveCounter <= 2)
                     {
                         bottomRightSlotX -= axisBagSlotMove;

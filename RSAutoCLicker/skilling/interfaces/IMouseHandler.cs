@@ -5,7 +5,7 @@ namespace RsAutoClicker
     public interface IMouseHandler
     {
         POINT GetCursorPosition();
-        void SmoothLeftClick(int x, int y, bool isFast = true, bool withSleep = false);
-        void SmoothRightClick(int x, int y, bool isFast = true, bool withSleep = false);
+        void LeftClick(int x, int y, bool isFast = true, bool withSleep = false);
+        void RightCLick(int x, int y, bool isFast = true, bool withSleep = false);
     }
 }

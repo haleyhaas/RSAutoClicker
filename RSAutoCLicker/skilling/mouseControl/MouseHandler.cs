@@ -15,7 +15,7 @@ namespace RsAutoClicker
             return point;
         }
 
-        public void SmoothLeftClick(int x, int y, bool isFast = true, bool withSleep = false)
+        public void LeftClick(int x, int y, bool isFast = true, bool withSleep = false)
         {
             var point = new POINT
             {
@@ -26,7 +26,7 @@ namespace RsAutoClicker
             MoveMouse(point, isFast);
             LeftMouseClick(point.X, point.Y, withSleep);
         }
-        public void SmoothRightClick(int x, int y, bool isFast = false, bool withSleep = false)
+        public void RightCLick(int x, int y, bool isFast = false, bool withSleep = false)
         {
             var point = new POINT
             {
