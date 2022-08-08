@@ -15,10 +15,6 @@
         {
             Console.WriteLine($"Doing {nameof(Agility)}");
 
-            // click tree
-            _mouseHandler.LeftClick(1277, 171, true, true);
-            Thread.Sleep(2300);
-
             // click wall
             _mouseHandler.LeftClick(810, 561, true, true);
             Thread.Sleep(4300);
@@ -43,9 +39,9 @@
             _mouseHandler.LeftClick(986, 535, true, true);
             Thread.Sleep(2000);
 
-            // teleport reset
+            // click wall reset
             _mouseHandler.LeftClick(1526, 754, true, true);
-            Thread.Sleep(2000);
+            Thread.Sleep(16_00);
         }
     }
 }
