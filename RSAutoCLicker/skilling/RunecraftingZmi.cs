@@ -16,7 +16,7 @@
         {
             Console.WriteLine($"Doing {nameof(RunecraftingZmi)}");
 
-            var point = _mouseHandler.GetCursorPosition();
+            var point = _mouseHandler.CursorPos();
             
             // hide NPCs
             _mouseHandler.LeftClick(-62, 475);

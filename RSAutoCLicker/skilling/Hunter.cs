@@ -14,22 +14,27 @@
         public void Do()
         {
             Console.WriteLine($"Doing {nameof(Hunter)}");
-
+            var p = _mouseHandler.CursorPos();
+            var s = 13_500;
             // box trap 1
-            _mouseHandler.LeftClick(1210, 554, true, true);
-            Thread.Sleep(8500);
+            _mouseHandler.LeftClick(897, 539, true, true);
+            Thread.Sleep(s);
 
             // box trap 2
-            _mouseHandler.LeftClick(1070, 419, true, true);
-            Thread.Sleep(8500);
+            _mouseHandler.LeftClick(691, 391, true, true);
+            Thread.Sleep(s);
 
             // box trap 3
-            _mouseHandler.LeftClick(1215, 289, true, true);
-            Thread.Sleep(8500);
+            _mouseHandler.LeftClick(949, 295, true, true);
+            Thread.Sleep(s);
 
             // box trap 4
-            _mouseHandler.LeftClick(1347, 434, true, true);
-            Thread.Sleep(8500);
+            _mouseHandler.LeftClick(765, 275, true, true);
+            Thread.Sleep(s);
+
+            // box trap 5
+            _mouseHandler.LeftClick(1038, 360, true, true);
+            Thread.Sleep(s);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace RsAutoClicker
     /// </summary>
     public class MouseHandler : IMouseHandler
     {
-        public POINT GetCursorPosition()
+        public POINT CursorPos()
         {
             GetCursorPos(out var point);
             return point;
