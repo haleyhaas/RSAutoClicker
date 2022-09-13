@@ -65,7 +65,7 @@
             Thread.Sleep(1000);
 
             // lob 1
-            _mouseHandler.RightCLick(-590, 940);
+            _mouseHandler.RightClick(-590, 940);
             Thread.Sleep(300);
             _mouseHandler.LeftClick(-614, 1068);
             Thread.Sleep(1000);

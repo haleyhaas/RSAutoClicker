@@ -26,7 +26,7 @@ namespace RsAutoClicker
             MoveMouse(point, isFast);
             LeftMouseClick(point.X, point.Y, withSleep);
         }
-        public void RightCLick(int x, int y, bool isFast = false, bool withSleep = false)
+        public void RightClick(int x, int y, bool isFast = false, bool withSleep = false)
         {
             var point = new POINT
             {
@@ -116,8 +116,8 @@ namespace RsAutoClicker
         public const int MOUSEEVENTF_LEFTUP = 0x04;
 
         // todo, I think these are correct?
-        public const int MOUSEEVENTF_RIGHTDOWN = 0x06;
-        public const int MOUSEEVENTF_RIGHTUP = 0x08;
+        public const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        public const int MOUSEEVENTF_RIGHTUP = 0x10;
 
         //This simulates a left mouse click
         public static void LeftMouseClick(int xpos, int ypos, bool withSleep = false)
