@@ -14,8 +14,8 @@
                 var axisBagSlotMove = 38;
 
                 // bottom right most slot
-                var bottomRightSlotX = 1205;
-                var bottomRightSlotY = 694;
+                var bottomRightSlotX = 1596;
+                var bottomRightSlotY = 967;
 
                 var moveCounter = 0;
                 var yCounter = 0;

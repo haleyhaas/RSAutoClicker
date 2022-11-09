@@ -20,31 +20,31 @@
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(1044, 666);
+            _mouseHandler.LeftClick(1058, 692);
             Thread.Sleep(800);
 
             // withdraw 1
-            _mouseHandler.LeftClick(976, 520);
+            _mouseHandler.LeftClick(990, 550);
             Thread.Sleep(200);
 
             // withdraw 2
-            _mouseHandler.LeftClick(1020, 520);
+            _mouseHandler.LeftClick(1034, 550);
             Thread.Sleep(200);
 
             // close bank
-            _mouseHandler.LeftClick(1086, 160);
+            _mouseHandler.LeftClick(1100, 190);
             Thread.Sleep(600);
 
             // use 1
-            _mouseHandler.LeftClick(1196, 655);
+            _mouseHandler.LeftClick(1210, 682);
             Thread.Sleep(200);
 
             // use 2
-            _mouseHandler.LeftClick(1196, 686);
-            Thread.Sleep(400);
+            _mouseHandler.LeftClick(1210, 712);
+            Thread.Sleep(800);
 
             // make all
-            _mouseHandler.LeftClick(830, 786);
+            _mouseHandler.LeftClick(851, 807);
 
             // sleep
             Thread.Sleep(15_600);

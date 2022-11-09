@@ -7,34 +7,57 @@ namespace RsAutoClicker
     public class Firemaking : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
+        private int _counter;
         public Firemaking(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _counter = 0;
         }
 
         public void Do()
         {
-            Console.WriteLine($"Doing {nameof(Firemaking)}");
+            Console.WriteLine($"Doing {nameof(Mining)}");
+            Thread.Sleep(3000);
             var p = _mouseHandler.CursorPos();
 
+            // bank
+            if (_counter % 2 == 0)
+            {
+                _mouseHandler.LeftClick(792, 531, true, true);
+            }
+            else
+            {
+                _mouseHandler.LeftClick(795, 531, true, true);
+            }
+            Thread.Sleep(1500);
+
             // withdraw
-            _mouseHandler.LeftClick(1024, 447);
-            Thread.Sleep(3_000);
+            _mouseHandler.LeftClick(871, 279);
+            Thread.Sleep(500);
+
+            // close
+            _mouseHandler.LeftClick(940, 60);
+            Thread.Sleep(500);
 
             // run to square
-            _mouseHandler.LeftClick(1134, 268, true, true);
-            Thread.Sleep(10_000);
+            if (_counter % 2 == 0)
+            {
+                _mouseHandler.LeftClick(1613, 540, true, true);
+            }
+            else
+            {
+                _mouseHandler.LeftClick(1611, 483, true, true);
+            }
+            Thread.Sleep(9_000);
 
             // do firemaking
-            var p1 = new POINT{X = 1324, Y = 757};
-            var p2 = new POINT { X = 1190, Y = 545 };
+            var p1 = new POINT { X = 1605, Y = 968 }; // logs
+            var p2 = new POINT { X = 1477, Y = 756 }; // tinderbox
 
             DoFiremaking(p1, p2);
-            Thread.Sleep(4_000);
-
-            // bank
-            _mouseHandler.LeftClick(826, 415, true, true);
-            Thread.Sleep(4_000);
+            Thread.Sleep(500);
+            
+            _counter++;
         }
 
         private void DoFiremaking(POINT bottomRight, POINT topLeft)
@@ -48,9 +71,9 @@ namespace RsAutoClicker
             for (var i = 0; i < 27; i++)
             {
                 _mouseHandler.LeftClick(startX, startY);
-                Thread.Sleep(1000);
+                Thread.Sleep(500 + (i*5));
                 _mouseHandler.LeftClick(topLeft.X, topLeft.Y);
-                Thread.Sleep(3075);
+                Thread.Sleep(2575);
 
                 if (moveCounter <= 2)
                 {
