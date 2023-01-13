@@ -17,44 +17,40 @@ namespace RsAutoClicker
             var p = _mouseHandler.CursorPos();
 
             // start
-            _mouseHandler.LeftClick(817, 326, true, true);
-            Thread.Sleep(5_300);
+            _mouseHandler.LeftClick(1044, 489, true, true);
+            Thread.Sleep(5_000);
 
             // click gap
-            _mouseHandler.LeftClick(723, 178, true, true);
-            Thread.Sleep(9_050);
+            _mouseHandler.LeftClick(798, 49, true, true);
+            Thread.Sleep(8_750);
 
             // click plank
-            _mouseHandler.LeftClick(665, 342, true, true);
-            Thread.Sleep(7_300);
+            _mouseHandler.LeftClick(637, 519, true, true);
+            Thread.Sleep(7_000);
 
             // check count to click marks of grace
             if (_count > 20)
             {
-                _mouseHandler.LeftClick(745, 339, true, true);
-                Thread.Sleep(4_000);
+                _mouseHandler.LeftClick(858, 522, true, true);
+                Thread.Sleep(1_000);
                 _count = 0;
             }
 
             // jump gap
-            _mouseHandler.LeftClick(677, 345, true, true);
-            Thread.Sleep(4_500);
+            _mouseHandler.LeftClick(673, 551, true, true);
+            Thread.Sleep(4_200);
 
             // jump gap
-            _mouseHandler.LeftClick(732, 425, true, true);
-            Thread.Sleep(4_700);
+            _mouseHandler.LeftClick(811, 783, true, true);
+            Thread.Sleep(4_400);
 
             // balance thing
-            _mouseHandler.LeftClick(783, 501, true, true);
-            Thread.Sleep(7_600);
+            _mouseHandler.LeftClick(947, 942, true, true);
+            Thread.Sleep(7_400);
 
-            // if I fell, we want to reset our pos
-            //_mouseHandler.LeftClick(0, 0, true, true);
-            //Thread.Sleep(4_000);
-
-            // if I didn't fall, we can finish the course
-            _mouseHandler.LeftClick(741, 349, true, true);
-            Thread.Sleep(12_000);
+            // finish the course
+            _mouseHandler.LeftClick(851, 571, true, true);
+            Thread.Sleep(11_600);
 
             _count++;
         }

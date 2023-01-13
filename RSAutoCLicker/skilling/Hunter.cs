@@ -15,25 +15,25 @@
         {
             Console.WriteLine($"Doing {nameof(Hunter)}");
             var p = _mouseHandler.CursorPos();
-            var s = 13_500;
+            var s = 12_800;
             // box trap 1
-            _mouseHandler.LeftClick(897, 539, true, true);
+            _mouseHandler.LeftClick(902, 447, true, true);
             Thread.Sleep(s);
 
             // box trap 2
-            _mouseHandler.LeftClick(691, 391, true, true);
+            _mouseHandler.LeftClick(733, 597, true, true);
             Thread.Sleep(s);
 
             // box trap 3
-            _mouseHandler.LeftClick(949, 295, true, true);
+            _mouseHandler.LeftClick(667, 369, true, true);
             Thread.Sleep(s);
 
             // box trap 4
-            _mouseHandler.LeftClick(765, 275, true, true);
+            _mouseHandler.LeftClick(659, 519, true, true);
             Thread.Sleep(s);
 
             // box trap 5
-            _mouseHandler.LeftClick(1038, 360, true, true);
+            _mouseHandler.LeftClick(753, 289, true, true);
             Thread.Sleep(s);
         }
     }

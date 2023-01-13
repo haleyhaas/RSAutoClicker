@@ -15,7 +15,7 @@ namespace RsAutoClicker
             return point;
         }
 
-        public void LeftClick(int x, int y, bool isFast = true, bool withSleep = false)
+        public void LeftClick(int x, int y, bool isFast = true, bool withSleep = false, bool isVeryFast = false)
         {
             var point = new POINT
             {
@@ -23,7 +23,7 @@ namespace RsAutoClicker
                 Y = y
             };
 
-            MoveMouse(point, isFast);
+            MoveMouse(point, isFast, isVeryFast);
             LeftMouseClick(point.X, point.Y, withSleep);
         }
         public void RightClick(int x, int y, bool isFast = false, bool withSleep = false)
@@ -41,10 +41,14 @@ namespace RsAutoClicker
         /// <summary>
         /// In order to simulate "smooth" mouse movements, we need to Move the mouse across the screen over delay
         /// </summary>
-        private static void MoveMouse(POINT dest, bool isFast = false)
+        private static void MoveMouse(POINT dest, bool isFast = false, bool isVeryFast = false)
         {
             var sleepTime = 1; // 1MS, but CPU cycle times means this is closer to an 8 ms sleep time.
             var increments = isFast ? 12 : 6; // how many pixels we want to move left/right
+            if (isVeryFast)
+            {
+                increments = 24;
+            }
 
             int distanceToMoveX, distanceToMoveY;
 

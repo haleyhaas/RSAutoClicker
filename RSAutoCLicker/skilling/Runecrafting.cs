@@ -7,7 +7,7 @@
     {
         private readonly IMouseHandler _mouseHandler;
         private int _count;
-        private int _lastRepair;
+
         public Runecrafting(IMouseHandler mouseHandler)
         {
             _count = 0;
@@ -20,84 +20,81 @@
 
             // get point to assign to each part of the runecrafting process
             var p = _mouseHandler.CursorPos();
-           // _mouseHandler.LeftClick(832, 385, isFast: true);
+            //_mouseHandler.LeftClick(835, 355, isFast: true);
 
             // bank
-            _mouseHandler.LeftClick(1558, 471, isFast: true, withSleep: true);
+            _mouseHandler.LeftClick(1255, 669, isFast: true, withSleep: true);
             Thread.Sleep(3900);
 
-            if (_count == 9)
-            {
-                // withdraw pot
-                _mouseHandler.LeftClick(875, 248, isFast: true);
-                Thread.Sleep(800);
-
-                // drink
-                _mouseHandler.LeftClick(1562, 753, isFast: true);
-            }
-
-            // deposit
-            _mouseHandler.LeftClick(898, 825, isFast: true);
-            Thread.Sleep(500);                       
-                        
-            // withdraw essence
-            _mouseHandler.LeftClick(880, 212, isFast: true);
-            Thread.Sleep(200);
-
-            // fill pouches
-            ClickPouches();            
-
-            // withdraw essence
-            _mouseHandler.LeftClick(880, 212, isFast: true);
-            Thread.Sleep(200);
-
-            // fill giant
-            ClickPouches();
-
-            // withdraw essence
-            _mouseHandler.LeftClick(880, 212, isFast: true);
-            Thread.Sleep(200);
-
-            // close bank
-            _mouseHandler.LeftClick(939, 60, isFast: true);
-
-            // teleport
-            _mouseHandler.LeftClick(1474, 746, isFast: true, withSleep: true);
-            Thread.Sleep(3000);
+            // inventory managment should never change pixel position
+            BankManagement();
 
             // enter altar
-            _mouseHandler.LeftClick(800, 385, isFast: true);
+            _mouseHandler.LeftClick(835, 355, isFast: true);
             Thread.Sleep(3000);
 
-            if(_count == 9)
+            if(_count == 7)
             {
                 RepairPouches();               
                 _count = 0;
             }
 
             // click altar
-            _mouseHandler.LeftClick(265, 377, isFast: true);
+            _mouseHandler.LeftClick(484, 348, isFast: true);
             Thread.Sleep(3000);
 
             // empty pouches
             ClickPouches();
 
             // click altar
-            _mouseHandler.LeftClick(615, 456, isFast: true);
+            _mouseHandler.LeftClick(692, 450, isFast: true);
 
             // empty giant
-            ClickPouches();
+            ClickPouches(true);
 
             // click altar
-            _mouseHandler.LeftClick(615, 456, isFast: true);
+            _mouseHandler.LeftClick(738, 464, isFast: true, withSleep: true);
 
-            // edgeville teleport
-            _mouseHandler.LeftClick(1362, 1013, isFast: true, withSleep: true);
-            _mouseHandler.LeftClick(1536, 783, isFast: true, withSleep: true);
-            _mouseHandler.LeftClick(1329, 1012, isFast: true, withSleep: true);
+            // crafting guild teleport
+            _mouseHandler.LeftClick(1362, 1013, isFast: true);
+            _mouseHandler.LeftClick(1497, 790, isFast: true);
+            _mouseHandler.LeftClick(1329, 1012, isFast: true);
             Thread.Sleep(1300);
 
             _count++;
+        }
+
+        private void BankManagement()
+        {
+            // deposit
+            _mouseHandler.LeftClick(898, 825, isFast: true);
+            Thread.Sleep(500);
+
+            // withdraw essence
+            _mouseHandler.LeftClick(880, 206, isVeryFast: true);
+            Thread.Sleep(200);
+
+            // fill pouches
+            ClickPouches();
+
+            // withdraw essence
+            _mouseHandler.LeftClick(880, 212, isVeryFast: true);
+            Thread.Sleep(200);
+
+            // fill giant
+            ClickPouches(true);
+
+            // withdraw essence
+            _mouseHandler.LeftClick(880, 212, isVeryFast: true);
+            Thread.Sleep(200);
+
+            // close bank
+            _mouseHandler.LeftClick(939, 60, isFast: true);
+
+
+            // teleport
+            _mouseHandler.LeftClick(1474, 746, isFast: true, withSleep: true);
+            Thread.Sleep(3000);
         }
 
         private void RepairPouches()
@@ -115,7 +112,7 @@
             Thread.Sleep(1200);
 
             // repair pls
-            _mouseHandler.LeftClick(278, 928, isFast: true);
+            _mouseHandler.LeftClick(282, 925, isFast: true);
             Thread.Sleep(1200);
 
             // continue dialog...
@@ -127,15 +124,10 @@
             Thread.Sleep(100);
         }
 
-        private void ClickPouches()
+        private void ClickPouches(bool fillGiant = false)
         {
-            _mouseHandler.LeftClick(1475, 784, isFast: true);
-            Thread.Sleep(100);
-            _mouseHandler.LeftClick(1475, 823, isFast: true);
-            Thread.Sleep(100);
-            _mouseHandler.LeftClick(1475, 861, isFast: true);
-            Thread.Sleep(100);
-            _mouseHandler.LeftClick(1475, 894, isFast: true);
+            Thread.Sleep(300);
+            _mouseHandler.LeftClick(1475, 784, isVeryFast: true);
         }
     }
 }

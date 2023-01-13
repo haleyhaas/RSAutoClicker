@@ -15,7 +15,7 @@
 
                 // bottom right most slot
                 var bottomRightSlotX = 1596;
-                var bottomRightSlotY = 967;
+                var bottomRightSlotY = 961;
 
                 var moveCounter = 0;
                 var yCounter = 0;
