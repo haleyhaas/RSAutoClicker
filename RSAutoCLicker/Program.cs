@@ -7,5 +7,5 @@ var stopwatch = Stopwatch.StartNew();
 while (stopwatch.ElapsedMilliseconds < 21_600_000) // 6 hours
 {
     script.Do();
-    //count--;
+    count--;
 }

@@ -18,22 +18,23 @@
             var p = _mouseHandler.CursorPos();
 
             // ore 1
-            _mouseHandler.LeftClick(964, 581, true);
-            Thread.Sleep(1600);
+            _mouseHandler.LeftClick(1018, 597, true);
+            Thread.Sleep(1820);
 
             // ore 2
-            _mouseHandler.LeftClick(786, 913, true);
-            Thread.Sleep(1600);
+            _mouseHandler.LeftClick(764, 807, true);
+            Thread.Sleep(1820);
 
             // ore 3
-            _mouseHandler.LeftClick(496, 629, true);
-            Thread.Sleep(1200);
+            _mouseHandler.LeftClick(628, 645, true, withSleep: true);
+            Thread.Sleep(1250);
 
             // clear the 3 inventory slots from ore
             _mouseHandler.LeftClick(1483, 750, true);
             _mouseHandler.LeftClick(1523, 750, true);
             _mouseHandler.LeftClick(1563, 750, true);
             _mouseHandler.LeftClick(1603, 750, true);
+            _mouseHandler.LeftClick(1475, 788, true);
         }
     }
 }
