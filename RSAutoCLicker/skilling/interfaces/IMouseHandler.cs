@@ -7,5 +7,8 @@ namespace RsAutoClicker
         POINT CursorPos();
         void LeftClick(int x, int y, bool isFast = true, bool withSleep = false);
         void RightClick(int x, int y, bool isFast = true, bool withSleep = false);
+
+        void InstantLeftClick(int xpos, int ypos, bool withSleep = false, bool noClick = false);
+
     }
 }

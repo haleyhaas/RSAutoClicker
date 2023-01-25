@@ -16,43 +16,39 @@ namespace RsAutoClicker
 
         public void Do()
         {
-            Console.WriteLine($"Doing {nameof(Mining)}");
+            Console.WriteLine($"Doing {nameof(Firemaking)}");
             Thread.Sleep(3000);
             var p = _mouseHandler.CursorPos();
 
             // bank
             if (_counter % 2 == 0)
             {
-                _mouseHandler.LeftClick(792, 531, true, true);
+                _mouseHandler.LeftClick(920, 461, true, true);
             }
             else
             {
-                _mouseHandler.LeftClick(795, 531, true, true);
+                _mouseHandler.LeftClick(976, 480, true, true);
             }
             Thread.Sleep(1500);
 
             // withdraw
-            _mouseHandler.LeftClick(871, 279);
-            Thread.Sleep(500);
-
-            // close
-            _mouseHandler.LeftClick(940, 60);
+            _mouseHandler.LeftClick(1017, 387);
             Thread.Sleep(500);
 
             // run to square
             if (_counter % 2 == 0)
             {
-                _mouseHandler.LeftClick(1613, 540, true, true);
+                _mouseHandler.LeftClick(1122, 129, true, true);
             }
             else
             {
-                _mouseHandler.LeftClick(1611, 483, true, true);
+                _mouseHandler.LeftClick(1151, 137, true, true);
             }
             Thread.Sleep(9_000);
 
             // do firemaking
-            var p1 = new POINT { X = 1605, Y = 968 }; // logs
-            var p2 = new POINT { X = 1477, Y = 756 }; // tinderbox
+            var p1 = new POINT { X = 1408, Y = 736 }; // logs
+            var p2 = new POINT { X = 1281, Y = 520 }; // tinderbox
 
             DoFiremaking(p1, p2);
             Thread.Sleep(500);

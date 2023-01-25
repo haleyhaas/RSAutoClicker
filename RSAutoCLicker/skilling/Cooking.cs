@@ -6,9 +6,11 @@
     public class Cooking : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
+        private readonly KeyboardHandler _keyboardHandler;
         public Cooking(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _keyboardHandler = new KeyboardHandler();
         }
 
         public void Do()
@@ -17,31 +19,44 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(874, 386);
+            _mouseHandler.LeftClick(950, 582);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(918, 694);
+            _mouseHandler.LeftClick(829, 596);
 
             // withdraw
-            _mouseHandler.LeftClick(850, 256);
+            _mouseHandler.LeftClick(814, 544);
             Thread.Sleep(200);
-            _mouseHandler.LeftClick(897, 256);
-            Thread.Sleep(150);
 
             // close
-            _mouseHandler.LeftClick(952, 171);
-            Thread.Sleep(800);
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
+            Thread.Sleep(100);
 
-            // click items
-            _mouseHandler.LeftClick(1067, 658);
-            Thread.Sleep(700);
-            _mouseHandler.LeftClick(1067, 691);
-            Thread.Sleep(800);
+            for (var i = 0; i < 28; i++)
+            {                
 
+                // cook
+                _mouseHandler.LeftClick(1212, 721, isFast: true);
+
+                // make all
+                for (var j = 0; j < 36; j++)
+                {
+                    _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
+                    Thread.Sleep(1);
+                }
+
+                // range
+                _mouseHandler.LeftClick(767, 676, isFast: true);
+                //Thread.Sleep(300);                
+            }
             // make all
-            _mouseHandler.LeftClick(711, 797);
-            Thread.Sleep(17_000);
+            for (var j = 0; j < 36; j++)
+            {
+                _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
+                Thread.Sleep(1);
+            }
+            Thread.Sleep(600);
         }
     }
 }

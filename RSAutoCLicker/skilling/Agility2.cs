@@ -1,7 +1,7 @@
 ﻿namespace RsAutoClicker
 {
     /// <summary>
-    /// Do Hunter (Red chins)
+    /// Falador course
     /// </summary>
     public class Agility2 : IScripter
     {
@@ -17,40 +17,56 @@
             var p = _mouseHandler.CursorPos();
 
             // rough wall
-            _mouseHandler.LeftClick(370, 619, true, true);
-            Thread.Sleep(8200);
+            _mouseHandler.LeftClick(911, 145, true, true);
+            Thread.Sleep(6200);
 
-            // clothes line
-            _mouseHandler.LeftClick(650, 535, true, true);
-            Thread.Sleep(8650);
+            // tightrope
+            _mouseHandler.LeftClick(830, 372, true, true);
+            Thread.Sleep(7050);
 
-            // gap
-            _mouseHandler.LeftClick(598, 463, true, true);
-            Thread.Sleep(8500);
-
-            // wall
-            _mouseHandler.LeftClick(678, 541, true, true);
-            Thread.Sleep(11300);
+            // hand holds
+            _mouseHandler.LeftClick(786, 214, true, true);
+            Thread.Sleep(9000);
 
             // gap
-            _mouseHandler.LeftClick(854, 672, true, true);
-            Thread.Sleep(6500);
+            _mouseHandler.LeftClick(636, 351, true, true);
+            Thread.Sleep(2500);
 
             // gap
-            _mouseHandler.LeftClick(1272, 527, true, true);
-            Thread.Sleep(10200);
+            _mouseHandler.LeftClick(579, 404, true, true);
+            Thread.Sleep(3500);
+
+            // tightrope
+            _mouseHandler.LeftClick(484, 402, true, true);
+            Thread.Sleep(8400);
+
+            // tightrope
+            _mouseHandler.LeftClick(636, 444, true, true);
+            Thread.Sleep(5200);
 
             // gap
-            _mouseHandler.LeftClick(1237, 444, true, true);
-            Thread.Sleep(8500);
+            _mouseHandler.LeftClick(623, 449, true, true);
+            Thread.Sleep(2500);
 
             // ledge
-            _mouseHandler.LeftClick(837, 358, true, true);
-            Thread.Sleep(5500);
+            _mouseHandler.LeftClick(621, 520, true, true);
+            Thread.Sleep(2500);
+
+            // ledge
+            _mouseHandler.LeftClick(632, 514, true, true);
+            Thread.Sleep(2200);
+
+            // ledge
+            _mouseHandler.LeftClick(694, 637, true, true);
+            Thread.Sleep(4000);
+
+            // ledge
+            _mouseHandler.LeftClick(858, 406, true, true);
+            Thread.Sleep(2500);
 
             // edge
-            _mouseHandler.LeftClick(820, 371, true, true);
-            Thread.Sleep(4_500);
+            _mouseHandler.LeftClick(867, 388, true, true);
+            Thread.Sleep(4500);
         }
     }
 }

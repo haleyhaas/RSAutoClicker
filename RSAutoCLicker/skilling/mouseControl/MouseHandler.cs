@@ -26,6 +26,12 @@ namespace RsAutoClicker
             MoveMouse(point, isFast);
             LeftMouseClick(point.X, point.Y, withSleep);
         }
+
+        public void InstantLeftClick(int xpos, int ypos, bool withSleep = false, bool noClick = false)
+        {
+            LeftMouseClick(xpos, ypos, withSleep, noClick);
+        }
+
         public void RightClick(int x, int y, bool isFast = false, bool withSleep = false)
         {
             var point = new POINT
@@ -120,15 +126,18 @@ namespace RsAutoClicker
         public const int MOUSEEVENTF_RIGHTUP = 0x10;
 
         //This simulates a left mouse click
-        public static void LeftMouseClick(int xpos, int ypos, bool withSleep = false)
+        public static void LeftMouseClick(int xpos, int ypos, bool withSleep = false, bool noClick = false)
         {
             SetCursorPos(xpos, ypos);
             if (withSleep)
             {
-                Thread.Sleep(650);
+                Thread.Sleep(600);
             }
-            mouse_event(MOUSEEVENTF_LEFTDOWN, xpos, ypos, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, xpos, ypos, 0, 0);
+            if (!noClick)
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, xpos, ypos, 0, 0);
+                mouse_event(MOUSEEVENTF_LEFTUP, xpos, ypos, 0, 0);
+            }
         }
 
         public static void RightMouseClick(int xpos, int ypos, bool withSleep = false)
@@ -141,6 +150,7 @@ namespace RsAutoClicker
             mouse_event(MOUSEEVENTF_RIGHTDOWN, xpos, ypos, 0, 0);
             mouse_event(MOUSEEVENTF_RIGHTUP, xpos, ypos, 0, 0);
         }
+               
 
         #endregion
     }

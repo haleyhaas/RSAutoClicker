@@ -16,38 +16,38 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(1000, 357, true, true);
+            _mouseHandler.LeftClick(1027, 443, true, true);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(1058, 692);
+            _mouseHandler.LeftClick(1069, 546);
             Thread.Sleep(800);
 
-            // withdraw 1
-            _mouseHandler.LeftClick(990, 550);
+            // withdraw
+            _mouseHandler.LeftClick(631, 300);
             Thread.Sleep(200);
 
             // withdraw 2
-            _mouseHandler.LeftClick(1034, 550);
-            Thread.Sleep(200);
+            //_mouseHandler.LeftClick(1034, 550);
+            //Thread.Sleep(200);
 
             // close bank
-            _mouseHandler.LeftClick(1100, 190);
+            _mouseHandler.LeftClick(838, 47);
             Thread.Sleep(600);
 
             // use 1
-            _mouseHandler.LeftClick(1210, 682);
+            _mouseHandler.LeftClick(1072, 510);
             Thread.Sleep(200);
 
             // use 2
-            _mouseHandler.LeftClick(1210, 712);
+            _mouseHandler.LeftClick(1072, 550);
             Thread.Sleep(800);
 
             // make all
-            _mouseHandler.LeftClick(851, 807);
+            _mouseHandler.LeftClick(476, 717);
 
             // sleep
-            Thread.Sleep(15_600);
+            Thread.Sleep(32_000);
         }
     }
 }

@@ -6,9 +6,11 @@
     public class Smithing : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
+        private readonly KeyboardHandler _keyboardHandler;
         public Smithing(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _keyboardHandler = new KeyboardHandler();
         }
 
         public void Do()
@@ -18,28 +20,28 @@
             var p = _mouseHandler.CursorPos();
             
             // bank
-            _mouseHandler.LeftClick(498, 505, true, true);
-            Thread.Sleep(4000);
+            _mouseHandler.LeftClick(1048, 244, true, true);
+            Thread.Sleep(3500);
 
             // deposit
-            _mouseHandler.LeftClick(923, 666);
+            _mouseHandler.LeftClick(1131, 502);
             Thread.Sleep(500);
 
-            // withdraw bars + energy pot
-            _mouseHandler.LeftClick(900, 339);
-            Thread.Sleep(200);
-            _mouseHandler.LeftClick(903, 378);
+            // withdraw bars
+            _mouseHandler.LeftClick(814, 391);
+            Thread.Sleep(100);
 
             // anvil
-            _mouseHandler.LeftClick(1208, 465, true, true);
-            Thread.Sleep(5000);
+            _mouseHandler.LeftClick(385, 603, true, true);
+            Thread.Sleep(2500);
 
             // make all
-            _mouseHandler.LeftClick(676, 483);
-            Thread.Sleep(14_000);
-
-            // drink pots
-            _mouseHandler.LeftClick(1117, 758);            
+            for (var j = 0; j < 300; j++)
+            {
+                _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
+                Thread.Sleep(1);
+            }
+            Thread.Sleep(21_600);      
         }
     }
 }

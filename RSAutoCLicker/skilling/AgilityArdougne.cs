@@ -17,43 +17,39 @@ namespace RsAutoClicker
             var p = _mouseHandler.CursorPos();
 
             // start
-            _mouseHandler.LeftClick(817, 326, true, true);
+            _mouseHandler.LeftClick(822, 262, true, true);
             Thread.Sleep(5_300);
 
             // click gap
-            _mouseHandler.LeftClick(723, 178, true, true);
+            _mouseHandler.LeftClick(380, 105, true, true);
             Thread.Sleep(9_050);
 
             // click plank
-            _mouseHandler.LeftClick(665, 342, true, true);
+            _mouseHandler.LeftClick(511, 530, true, true);
             Thread.Sleep(7_300);
 
             // check count to click marks of grace
-            if (_count > 20)
+            if (_count > 30)
             {
-                _mouseHandler.LeftClick(745, 339, true, true);
+                _mouseHandler.LeftClick(693, 400, true, true);
                 Thread.Sleep(4_000);
                 _count = 0;
             }
 
             // jump gap
-            _mouseHandler.LeftClick(677, 345, true, true);
+            _mouseHandler.LeftClick(562, 522, true, true);
             Thread.Sleep(4_500);
 
             // jump gap
-            _mouseHandler.LeftClick(732, 425, true, true);
+            _mouseHandler.LeftClick(818, 620, true, true);
             Thread.Sleep(4_700);
 
             // balance thing
-            _mouseHandler.LeftClick(783, 501, true, true);
+            _mouseHandler.LeftClick(1063, 690, true, true);
             Thread.Sleep(7_600);
 
-            // if I fell, we want to reset our pos
-            //_mouseHandler.LeftClick(0, 0, true, true);
-            //Thread.Sleep(4_000);
-
             // if I didn't fall, we can finish the course
-            _mouseHandler.LeftClick(741, 349, true, true);
+            _mouseHandler.LeftClick(711, 428, true, true);
             Thread.Sleep(12_000);
 
             _count++;
