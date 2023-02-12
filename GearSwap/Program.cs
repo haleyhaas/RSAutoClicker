@@ -11,24 +11,16 @@ namespace KeyPressListener
         static void Main(string[] args)
         {
             var inventoryHelper = new InventoryHelper();
+            var keyboard = new KeyboardHandler();
             var mp = new MouseHandler();
-            var paused = false;
             var p = mp.CursorPos();
 
             while (true)
             {
-                var gearSwapX = 1072;
-                var gearSwapY = 502;
-                
-                if(GetAsyncKeyState(0x6A) != 0)
-                {
-                    paused = true;
-                }
+                var gearSwapX = 1156;
+                var gearSwapY = 635;
 
-                if(GetAsyncKeyState(0x6D) != 0)
-                {
-                    paused = false;
-                }
+                var paused = keyboard.CheckPause();
 
                 if (GetAsyncKeyState(0x52) != 0 && !paused) // 0x52 is the virtual key code for the R key
                 {
@@ -40,6 +32,7 @@ namespace KeyPressListener
                    inventoryHelper.GearSwap(gearSwapX + 90, gearSwapY);
                 }
 
+                #region pray shit
                 // mage pray
                 if (GetAsyncKeyState(0x51) != 0 && !paused) // the virtual key code for the Q key
                 {
@@ -58,7 +51,7 @@ namespace KeyPressListener
                 {
                    // inventoryHelper.PraySwap(1128, 788, "melee");
                 }
-
+                #endregion
             }
         }
     }

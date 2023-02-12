@@ -15,18 +15,23 @@
 
         public void Do()
         {
+            if (_keyboardHandler.CheckPause())
+            {
+                return;
+            }
+
             Console.WriteLine($"Doing {nameof(Cooking)}");
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(950, 582);
+            _mouseHandler.LeftClick(915, 466);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(829, 596);
+            _mouseHandler.LeftClick(771, 615);
 
             // withdraw
-            _mouseHandler.LeftClick(814, 544);
+            _mouseHandler.LeftClick(749, 578);
             Thread.Sleep(200);
 
             // close
@@ -34,10 +39,13 @@
             Thread.Sleep(100);
 
             for (var i = 0; i < 28; i++)
-            {                
-
+            {
+                if (_keyboardHandler.CheckPause())
+                {
+                    break;
+                }
                 // cook
-                _mouseHandler.LeftClick(1212, 721, isFast: true);
+                _mouseHandler.LeftClick(1191, 744, isFast: true);
 
                 // make all
                 for (var j = 0; j < 36; j++)
@@ -47,7 +55,7 @@
                 }
 
                 // range
-                _mouseHandler.LeftClick(767, 676, isFast: true);
+                _mouseHandler.LeftClick(785, 661, isFast: true);
                 //Thread.Sleep(300);                
             }
             // make all

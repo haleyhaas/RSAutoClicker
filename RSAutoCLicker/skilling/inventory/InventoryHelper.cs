@@ -57,8 +57,8 @@
             Thread.Sleep(s);
             _mouseHandler.InstantLeftClick(x + 40, y + 80);
             Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x, y + 120);
-            //Thread.Sleep(s);
+            _mouseHandler.InstantLeftClick(x, y + 120);
+            Thread.Sleep(s);
             //_mouseHandler.InstantLeftClick(x + 40, y + 120);
             //Thread.Sleep(s);
 

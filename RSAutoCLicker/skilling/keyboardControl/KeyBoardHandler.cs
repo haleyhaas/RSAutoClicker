@@ -5,6 +5,25 @@ namespace RsAutoClicker
 {
     public class KeyboardHandler
     {
+        [DllImport("user32.dll")]
+        static extern short GetAsyncKeyState(int vKey);
+
+        private bool _isPaused = false;
+
+        public bool CheckPause()
+        {
+            if (GetAsyncKeyState(0x6A) != 0)
+            {
+                _isPaused = true;
+            }
+
+            if (GetAsyncKeyState(0x6D) != 0)
+            {
+                _isPaused = false;
+            }
+
+            return _isPaused;
+        }
         public void Send(ScanCodeShort a)
         {
             INPUT[] Inputs = new INPUT[1];
