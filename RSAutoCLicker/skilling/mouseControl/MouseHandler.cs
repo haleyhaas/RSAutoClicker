@@ -124,18 +124,15 @@ namespace RsAutoClicker
 
         public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
-
-        // todo, I think these are correct?
         public const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         public const int MOUSEEVENTF_RIGHTUP = 0x10;
 
-        //This simulates a left mouse click
         public static void LeftMouseClick(int xpos, int ypos, bool withSleep = false, bool noClick = false)
         {
             SetCursorPos(xpos, ypos);
             if (withSleep)
             {
-                Thread.Sleep(600);
+                Thread.Sleep(200);
             }
             if (!noClick)
             {

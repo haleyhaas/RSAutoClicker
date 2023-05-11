@@ -19,14 +19,14 @@
             Console.WriteLine($"Doing {nameof(Fletching)}");
             var p = _mouseHandler.CursorPos();
 
-            if (_keyboardHandler.CheckPause ())
+            if (_keyboardHandler.CheckPause())
             {
                 return;
             }
 
-            _mouseHandler.LeftClick(1476, 746);
-            Thread.Sleep(100);
-            _mouseHandler.LeftClick(1476, 786);
+            _mouseHandler.LeftClick(1287, 661);
+            Thread.Sleep(75);
+            _mouseHandler.LeftClick(1287, 700);
 
         }
     }

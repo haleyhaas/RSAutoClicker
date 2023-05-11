@@ -10,6 +10,36 @@ namespace RsAutoClicker
 
         private bool _isPaused = false;
 
+        public bool Check4()
+        {
+            if (GetAsyncKeyState(0x64) != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Check5()
+        {
+            if (GetAsyncKeyState(0x65) != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Check6()
+        {
+            if (GetAsyncKeyState(0x66) != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public bool CheckPause()
         {
             if (GetAsyncKeyState(0x6A) != 0)

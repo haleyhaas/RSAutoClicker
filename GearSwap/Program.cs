@@ -1,58 +1,58 @@
 ﻿using RsAutoClicker;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace KeyPressListener
 {
     class Program
     {
         [DllImport("user32.dll")]
-        static extern short GetAsyncKeyState(int vKey);
+        private static extern short GetAsyncKeyState(int vKey);
 
         static void Main(string[] args)
         {
             var inventoryHelper = new InventoryHelper();
             var keyboard = new KeyboardHandler();
-            var mp = new MouseHandler();
-            var p = mp.CursorPos();
+            var mouse = new MouseHandler();
+
+            var gearSwapX = 1231;
+            var gearSwapY = 639;
+            var swapCount = 7;
 
             while (true)
             {
-                var gearSwapX = 1156;
-                var gearSwapY = 635;
+                var cursorPos = mouse.CursorPos();
+                var isPaused = keyboard.CheckPause();
 
-                var paused = keyboard.CheckPause();
-
-                if (GetAsyncKeyState(0x52) != 0 && !paused) // 0x52 is the virtual key code for the R key
+                if (IsKeyPressed(0x52) && !isPaused) // 0x52 is the virtual key code for the R key
                 {
-                    inventoryHelper.GearSwap(gearSwapX, gearSwapY);
+                    inventoryHelper.GearSwap(gearSwapX, gearSwapY, swapCount);
                 }
 
-                if (GetAsyncKeyState(0x46) != 0 && !paused) // 0x52 is the virtual key code for the F key
+                if (IsKeyPressed(0x46) && !isPaused) // 0x46 is the virtual key code for the F key
                 {
-                   inventoryHelper.GearSwap(gearSwapX + 90, gearSwapY);
+                    inventoryHelper.GearSwap(gearSwapX + 90, gearSwapY, swapCount);
                 }
 
-                #region pray shit
-                // mage pray
-                if (GetAsyncKeyState(0x51) != 0 && !paused) // the virtual key code for the Q key
+                if (IsKeyPressed(0x43) && !isPaused) // 0x43 is the virtual key code for the C key
                 {
-                   // inventoryHelper.PraySwap(1128, 788, "mage");
+                    mouse.InstantLeftClick(1253, 322, withSleep: true);
+                    Thread.Sleep(100);
+                    mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, noClick: true);
                 }
 
-
-                // range pray
-                if (GetAsyncKeyState(0x57) != 0 && !paused) // the virtual key code for the W key
-                {
-                    //inventoryHelper.PraySwap(1128, 788, "range");
-                }
-
-                // melee pray
-                if (GetAsyncKeyState(0x45) != 0 && !paused) // the virtual key code for the E key
-                {
-                   // inventoryHelper.PraySwap(1128, 788, "melee");
-                }
-                #endregion
+               //if (IsKeyPressed(0x45) && !isPaused) // 0x43 is the virtual key code for the E key
+               //{
+               //    mouse.InstantLeftClick(gearSwapX + 30, gearSwapY + 195);
+               //    Thread.Sleep(100);                    
+               //    mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, noClick: true);
+               //}
             }
+        }
+
+        private static bool IsKeyPressed(int virtualKeyCode)
+        {
+            return (GetAsyncKeyState(virtualKeyCode) & 0x8000) != 0;
         }
     }
 }
