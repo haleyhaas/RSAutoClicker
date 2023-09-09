@@ -1,40 +1,86 @@
-﻿using System.Runtime.InteropServices;
+﻿using RSAutoCLicker;
+using System.Diagnostics.Metrics;
 
 namespace RsAutoClicker
 {
     /// <summary>
-    /// Do Hunter (Red chins)
+    ///
     /// </summary>
     public class CannonClicker : IScripter
     {
-        [DllImport("user32.dll")]
-        static extern short GetAsyncKeyState(int vKey);
-
         private readonly IMouseHandler _mouseHandler;
-        private bool paused = false;
+        private readonly POINT _position;
+        private int _counter;
+        private int _potionPosX;
+        private int _potionPosY;
+
         public CannonClicker(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _position = _mouseHandler.CursorPos();
+            _counter = 0;
+            _potionPosX = 0;
+            _potionPosY = 0;
         }
 
         public void Do()
         {
             Console.WriteLine($"Doing {nameof(CannonClicker)}");
-            var p = _mouseHandler.CursorPos();
-            
-            if (GetAsyncKeyState(0x6A) != 0)
-            {
-                paused = true;
-            }
 
-            if (paused)
+            var p = _mouseHandler.CursorPos();
+
+            _mouseHandler.LeftClick(_position.X, _position.Y);
+                        
+            //UseFood(1239, 745);
+            UsePrayerPots(1236, 745);
+            Thread.Sleep(12_000);
+            _counter++;
+
+        }
+
+        private void UseFood(int x, int y)
+        {
+            var inc = 5;
+            if (_counter > 0 && _counter % inc == 0)
             {
-                Thread.Sleep(10_000);
-                paused = false;
+                _mouseHandler.LeftClick(x + (_potionPosX * 40), y + (_potionPosY * 40));
+                Thread.Sleep(1000);
+
+                _potionPosX++;
+
+                if (_potionPosX > 3)
+                {
+                    _potionPosX = 0;
+                    _counter = 0;
+                    _potionPosY++;
+
+                }
             }
-            _mouseHandler.LeftClick(422, 345);
-            Thread.Sleep(18_000);
-            Thread.Sleep(200);
+        }
+
+        private void UsePrayerPots(int x, int y)
+        {
+            var inc = 6;
+
+            if (_counter > 0 && _counter % inc == 0)
+            {
+                _mouseHandler.LeftClick(x + (_potionPosX * 40), y + (_potionPosY * 40));
+                Thread.Sleep(1000);
+
+                var positional = _counter / inc;
+                if (positional > 3)
+                {
+                    _potionPosX++;
+                    _counter = 0;
+                }
+
+                if (_potionPosX > 3)
+                {
+                    _potionPosX = 0;
+                    _potionPosY++;
+
+                }
+            }
         }
     }
 }
