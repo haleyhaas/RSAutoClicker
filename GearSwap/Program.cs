@@ -15,8 +15,8 @@ namespace KeyPressListener
             var keyboard = new KeyboardHandler();
             var mouse = new MouseHandler();
 
-            var gearSwapX = 1231;
-            var gearSwapY = 639;
+            var gearSwapX = 1244;
+            var gearSwapY = 671;
             var swapCount = 7;
 
             while (true)
@@ -36,7 +36,7 @@ namespace KeyPressListener
 
                 if (IsKeyPressed(0x43) && !isPaused) // 0x43 is the virtual key code for the C key
                 {
-                    mouse.InstantLeftClick(1253, 322, withSleep: true);
+                    mouse.InstantLeftClick(1265, 291, withSleep: true);
                     Thread.Sleep(100);
                     mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, noClick: true);
                 }
