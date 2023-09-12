@@ -1,7 +1,7 @@
 ﻿namespace RsAutoClicker
 {
     /// <summary>
-    /// Do Hunter (Red chins)
+    /// Seers Village
     /// </summary>
     public class Agility : IScripter
     {

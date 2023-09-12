@@ -1,5 +1,6 @@
 ﻿using RSAutoCLicker;
 using System.Diagnostics.Metrics;
+using System.Runtime.InteropServices;
 
 namespace RsAutoClicker
 {
@@ -8,15 +9,21 @@ namespace RsAutoClicker
     /// </summary>
     public class CannonClicker : IScripter
     {
+        [DllImport("user32.dll")]
+        private static extern short GetAsyncKeyState(int vKey);
+
         private readonly IMouseHandler _mouseHandler;
-        private readonly POINT _position;
+        private readonly KeyboardHandler _keyboardHandler;
+        private POINT _position;
         private int _counter;
         private int _potionPosX;
         private int _potionPosY;
+        private bool _isPaused;
 
         public CannonClicker(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _keyboardHandler = new KeyboardHandler();
             _position = _mouseHandler.CursorPos();
             _counter = 0;
             _potionPosX = 0;
@@ -29,11 +36,19 @@ namespace RsAutoClicker
 
             var p = _mouseHandler.CursorPos();
 
+            _isPaused = _keyboardHandler.CheckPause();
+
+            if(_isPaused )
+            {
+                _position = _mouseHandler.CursorPos();
+                return;
+            }
+
             _mouseHandler.LeftClick(_position.X, _position.Y);
                         
             //UseFood(1239, 745);
-            UsePrayerPots(1236, 745);
-            Thread.Sleep(12_000);
+            //UsePrayerPots(1236, 745);
+            Thread.Sleep(12_00);
             _counter++;
 
         }
