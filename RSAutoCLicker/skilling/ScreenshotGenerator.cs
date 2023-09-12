@@ -48,10 +48,65 @@ namespace RsAutoClicker
                 screenshot.Save(tempFilePath);
 
                 // Open the screenshot in Paint.NET
-                OpenInPaintDotNet(tempFilePath);
+                //OpenInPaintDotNet(tempFilePath);
+
+                // todo -> doesnt work yet
+                FindColorCoordinates(tempFilePath);                
 
                 Thread.Sleep(3_000);
             }
+        }
+
+        private void FindColorCoordinates(string tempFilePath)
+        {
+            Bitmap screenshot = new Bitmap(tempFilePath);
+
+            // Define the target color (as an RGB tuple)
+            Color targetColor = Color.Red;
+            int colorThreshold = 10; // Adjust this threshold as needed
+
+            // Initialize a queue for the flood-fill algorithm
+            Queue<Point> queue = new Queue<Point>();
+
+            // Initialize a set to keep track of visited pixels
+            HashSet<Point> visited = new HashSet<Point>();
+
+            // Initialize variables to track the most densely populated area
+            int maxPopulation = 0;
+            Point centerOfMaxPopulation = Point.Empty;
+
+            // Iterate through the pixels of the screenshot
+            for (int x = 0; x < screenshot.Width; x++)
+            {
+                for (int y = 0; y < screenshot.Height; y++)
+                {
+                    Color pixel = screenshot.GetPixel(x, y); // Get the pixel color at (x, y)
+
+                    // Check if the color difference is within the threshold
+                    int colorDifference = Math.Abs(pixel.R - targetColor.R) +
+                                          Math.Abs(pixel.G - targetColor.G) +
+                                          Math.Abs(pixel.B - targetColor.B);
+
+                    if (colorDifference <= colorThreshold && !visited.Contains(new Point(x, y)))
+                    {
+                        // Start a new flood-fill operation
+                        int population = FloodFill(screenshot, new Point(x, y), targetColor, colorThreshold, visited, queue, out var xPopulation);
+
+                        // Check if this region has a higher population
+                        if (population > maxPopulation)
+                        {
+                            maxPopulation = population;
+                            centerOfMaxPopulation = new Point(x + xPopulation / 2, y);
+                        }
+                    }
+                }
+            }
+            // Print the center of the most densely populated area
+            if (maxPopulation > 0)
+            {
+                _mouseHandler.InstantLeftClick(centerOfMaxPopulation.X, centerOfMaxPopulation.Y, noClick: true);
+            }
+
         }
 
         private static bool IsKeyPressed(int virtualKeyCode)
@@ -88,6 +143,65 @@ namespace RsAutoClicker
                 Process.Start(paintDotNetPath, filePath);
             }
         }
+
+        static int FloodFill(Bitmap image, Point seed, Color targetColor, int colorThreshold, HashSet<Point> visited, Queue<Point> queue, out int xPopulation)
+        {
+            int population = 0;
+            xPopulation = 0;
+            queue.Enqueue(seed);
+            visited.Add(seed);
+
+            while (queue.Count > 0)
+            {
+                Point current = queue.Dequeue();
+                population++;
+
+                // Check neighboring pixels
+                var neighbors = GetNeighbors(current, image.Width, image.Height).ToList();
+                for(var i = 0; i < 4; i++)
+                {
+                    var neighbor = neighbors[i];
+                    if (!visited.Contains(neighbor))
+                    {
+                        Color neighborColor = image.GetPixel(neighbor.X, neighbor.Y);
+                        int colorDifference = Math.Abs(neighborColor.R - targetColor.R) +
+                                              Math.Abs(neighborColor.G - targetColor.G) +
+                                              Math.Abs(neighborColor.B - targetColor.B);
+
+                        if (colorDifference <= colorThreshold)
+                        {
+                            if(i == 0){
+                                xPopulation--;
+                            }
+                            if(i == 1)
+                            {
+                                xPopulation++;
+                            }
+
+                            queue.Enqueue(neighbor);
+                            visited.Add(neighbor);
+                        }
+                    }
+                }
+            }
+
+            return population;
+        }
+
+        static IEnumerable<Point> GetNeighbors(Point point, int width, int height)
+        {
+            List<Point> neighbors = new List<Point>
+            {
+                new Point(point.X - 1, point.Y), // Left
+                new Point(point.X + 1, point.Y), // Right
+                new Point(point.X, point.Y - 1), // Up
+                new Point(point.X, point.Y + 1)  // Down
+            };
+
+            // Filter out neighbors that are out of bounds
+            return neighbors.FindAll(p => p.X >= 0 && p.X < width && p.Y >= 0 && p.Y < height);
+        }
+
 
         // Import Windows API functions
         [DllImport("user32.dll")]
