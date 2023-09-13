@@ -33,9 +33,7 @@
 
         public override void Do()
         {
-            Console.WriteLine($"Doing {nameof(AgilityArdougne)} - {_count}");
             base.Do();
-
             _count++;
         }
 

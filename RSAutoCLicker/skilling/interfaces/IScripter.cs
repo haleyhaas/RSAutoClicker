@@ -34,12 +34,12 @@
     public class Scripter : IScripter
     {        
         private readonly IMouseHandler _mouseHandler = new MouseHandler();
-        public List<IAction> _actions;
+        public List<IAction>? _actions;
 
         public virtual void Do()
         {
             Console.WriteLine($"Doing {GetType().Name}");
-            foreach (var action in _actions)
+            foreach (var action in _actions ?? new List<IAction>())
             {
                 action.Execute(_mouseHandler);
                 Thread.Sleep(action.Delay);
