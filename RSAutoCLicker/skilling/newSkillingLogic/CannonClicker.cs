@@ -7,7 +7,7 @@ namespace RsAutoClicker
     /// <summary>
     ///
     /// </summary>
-    public class CannonClicker : IScripter
+    public class CannonClicker : Scripter
     {
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(int vKey);
@@ -28,12 +28,15 @@ namespace RsAutoClicker
             _counter = 0;
             _potionPosX = 0;
             _potionPosY = 0;
+
+            _actions = new List<IAction>
+            {
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 12_000)
+            };
         }
 
-        public void Do()
+        public override void Do()
         {
-            Console.WriteLine($"Doing {nameof(CannonClicker)}");
-
             var p = _mouseHandler.CursorPos();
 
             _isPaused = _keyboardHandler.CheckPause();
@@ -44,13 +47,11 @@ namespace RsAutoClicker
                 return;
             }
 
-            _mouseHandler.LeftClick(_position.X, _position.Y);
+            base.Do();
                         
             //UseFood(1239, 745);
             //UsePrayerPots(1236, 745);
-            Thread.Sleep(12_00);
             _counter++;
-
         }
 
         private void UseFood(int x, int y)
