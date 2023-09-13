@@ -1,5 +1,4 @@
 ﻿using RSAutoCLicker;
-using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 
 namespace RsAutoClicker
