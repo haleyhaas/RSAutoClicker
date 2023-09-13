@@ -38,6 +38,7 @@
 
         public virtual void Do()
         {
+            Console.WriteLine($"Doing {GetType().Name}");
             foreach (var action in _actions)
             {
                 action.Execute(_mouseHandler);

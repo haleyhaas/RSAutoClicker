@@ -22,12 +22,6 @@
                 new AEvent(() => _mouseHandler.LeftClick(783, 501, true, true), 7_600),  // balance
                 new AEvent(() => _mouseHandler.LeftClick(741, 349, true, true), 12_000)  // finish
             };
-        }
-
-        public override void Do()
-        {
-            Console.WriteLine($"Doing {nameof(BloodEssenceCraft)}");
-            base.Do();           
-        }        
+        }  
     }
 }
