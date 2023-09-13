@@ -26,15 +26,8 @@ namespace RsAutoClicker
 
         public void Do()
         {
-            // Create a DateTime representing the current date and time
-            DateTime now = DateTime.Now;
-
-            // Define a reference DateTime (e.g., January 1, 1970)
-            DateTime referenceDate = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-
-            // Calculate the time difference in milliseconds
-            long millisecondsSinceReference = (long)(now - referenceDate).TotalMilliseconds;
-
+            // Calculate the time in milliseconds
+            long millisecondsSinceReference = (long)DateTime.Now.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
             _isPaused = _keyboardHandler.CheckPause();
 
 
@@ -48,12 +41,12 @@ namespace RsAutoClicker
                 screenshot.Save(tempFilePath);
 
                 // Open the screenshot in Paint.NET
-                //OpenInPaintDotNet(tempFilePath);
+                OpenInPaintDotNet(tempFilePath);
 
                 // todo -> doesnt work yet
-                FindColorCoordinates(tempFilePath);                
+                //FindColorCoordinates(tempFilePath);                
 
-                Thread.Sleep(3_000);
+                Thread.Sleep(1_000);
             }
         }
 

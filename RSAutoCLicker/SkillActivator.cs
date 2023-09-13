@@ -15,7 +15,10 @@
 
         private static T CreateInstance<T>(Type t, params object[] paramArray)
         {
-            return (T)Activator.CreateInstance(t, args: paramArray);
+            var inst = (T)Activator.CreateInstance(t, args: paramArray);
+            if(inst != null) return inst;
+
+            throw new NullReferenceException($"{t.Name} does not exist");
         }
     }
 }
