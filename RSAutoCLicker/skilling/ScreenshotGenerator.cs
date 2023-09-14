@@ -41,10 +41,10 @@ namespace RsAutoClicker
                 screenshot.Save(tempFilePath);
 
                 // Open the screenshot in Paint.NET
-                OpenInPaintDotNet(tempFilePath);
+                //OpenInPaintDotNet(tempFilePath);
 
                 // todo -> doesnt work yet
-                //FindColorCoordinates(tempFilePath);                
+                FindColorCoordinates(tempFilePath);                
 
                 Thread.Sleep(1_000);
             }
@@ -55,7 +55,9 @@ namespace RsAutoClicker
             Bitmap screenshot = new Bitmap(tempFilePath);
 
             // Define the target color (as an RGB tuple)
-            Color targetColor = Color.Red;
+            Color targetColor = Color.FromArgb(25, 160, 4);
+
+
             int colorThreshold = 10; // Adjust this threshold as needed
 
             // Initialize a queue for the flood-fill algorithm

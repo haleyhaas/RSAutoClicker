@@ -16,12 +16,12 @@
                 var axisBagSlotMove = 38;
 
                 // bottom right most slot
-                var bottomRightSlotX = 1598;
-                var bottomRightSlotY = 966;
+                var bottomRightSlotX = 1540;
+                var bottomRightSlotY = 893;
 
                 var moveCounter = 0;
                 var yCounter = 0;
-                for (var i = 0; i < 22; i++)
+                for (var i = 0; i < 26; i++)
                 {
                     _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
                     if (moveCounter <= 2)
