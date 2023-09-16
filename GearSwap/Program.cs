@@ -15,8 +15,8 @@ namespace KeyPressListener
             var keyboard = new KeyboardHandler();
             var mouse = new MouseHandler();
 
-            var gearSwapX = 1244;
-            var gearSwapY = 671;
+            var gearSwapX = 1236;
+            var gearSwapY = 683;
             var swapCount = 7;
 
             while (true)

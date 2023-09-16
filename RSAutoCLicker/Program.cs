@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 Thread.Sleep(2000);
-var script = SkillActivator.Activate(typeof(TitheFarm));
+var script = SkillActivator.Activate(typeof(AgilitySeers));
 var stopwatch = Stopwatch.StartNew();
 
 for(var i = 0; i < 267; i++)
