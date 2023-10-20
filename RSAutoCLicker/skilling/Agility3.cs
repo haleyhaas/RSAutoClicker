@@ -1,7 +1,7 @@
 ﻿namespace RsAutoClicker
 {
     /// <summary>
-    /// Canifis
+    /// agility pyramid
     /// </summary>
     public class Agility3 : IScripter
     {

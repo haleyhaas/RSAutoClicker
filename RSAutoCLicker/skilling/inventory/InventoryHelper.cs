@@ -16,12 +16,12 @@
                 var axisBagSlotMove = 38;
 
                 // bottom right most slot
-                var bottomRightSlotX = 1366;
-                var bottomRightSlotY = 906;
+                var bottomRightSlotX = 1384;
+                var bottomRightSlotY = 891;
 
                 var moveCounter = 0;
                 var yCounter = 0;
-                for (var i = 0; i < 26; i++)
+                for (var i = 0; i < 23; i++)
                 {
                     _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
                     if (moveCounter <= 2)
@@ -62,22 +62,7 @@
                     xCount -= 40;
                 }
             }
-            
-            //_mouseHandler.InstantLeftClick(x + 40, y);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x, y + 40);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x + 40, y + 40);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x, y + 80);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x + 40, y + 80);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x, y + 120);
-            //Thread.Sleep(s);
-            //_mouseHandler.InstantLeftClick(x + 40, y + 120);
-            //Thread.Sleep(s);
-
+           
             _mouseHandler.InstantLeftClick(pos.X, pos.Y, noClick: true);
 
         }

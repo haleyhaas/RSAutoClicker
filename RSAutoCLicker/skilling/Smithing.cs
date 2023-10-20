@@ -18,22 +18,20 @@
             Console.WriteLine($"Doing {nameof(Smithing)}");
 
             var p = _mouseHandler.CursorPos();
-            
-            // bank
-            _mouseHandler.LeftClick(1101, 226, true, true);
-            Thread.Sleep(3500);
 
             // deposit
-            _mouseHandler.LeftClick(1106, 529);
+            _mouseHandler.LeftClick(1257, 713);
             Thread.Sleep(500);
 
-            // withdraw bars
-            _mouseHandler.LeftClick(750, 392);
+            // withdraw
+            _mouseHandler.LeftClick(1000, 325);
+            Thread.Sleep(100);
+            _mouseHandler.LeftClick(1000, 355);
             Thread.Sleep(100);
 
-            // anvil
-            _mouseHandler.LeftClick(283, 626, true, true);
-            Thread.Sleep(2500);
+            // anvil/furance
+            _mouseHandler.LeftClick(1405, 355, true, true);
+            Thread.Sleep(5500);
 
             // make all
             for (var j = 0; j < 100; j++)
@@ -41,7 +39,12 @@
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
                 Thread.Sleep(1);
             }
-            Thread.Sleep(25_000);      
+            Thread.Sleep(22_000);
+
+            // bank
+            _mouseHandler.LeftClick(485, 806, true, true);
+            Thread.Sleep(5500);           
+
         }
     }
 }

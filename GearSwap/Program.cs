@@ -15,8 +15,8 @@ namespace KeyPressListener
             var keyboard = new KeyboardHandler();
             var mouse = new MouseHandler();
 
-            var gearSwapX = 1236;
-            var gearSwapY = 683;
+            var gearSwapX = 1259;
+            var gearSwapY = 677;
             var swapCount = 7;
 
             while (true)
@@ -26,6 +26,7 @@ namespace KeyPressListener
 
                 if (IsKeyPressed(0x52) && !isPaused) // 0x52 is the virtual key code for the R key
                 {
+                    //inventoryHelper.InventoryClear();
                     inventoryHelper.GearSwap(gearSwapX, gearSwapY, swapCount);
                 }
 
@@ -34,12 +35,12 @@ namespace KeyPressListener
                     inventoryHelper.GearSwap(gearSwapX + 90, gearSwapY, swapCount);
                 }
 
-                if (IsKeyPressed(0x43) && !isPaused) // 0x43 is the virtual key code for the C key
-                {
-                    mouse.InstantLeftClick(1265, 291, withSleep: true);
-                    Thread.Sleep(100);
-                    mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, noClick: true);
-                }
+                //if (IsKeyPressed(0x43) && !isPaused) // 0x43 is the virtual key code for the C key
+                //{
+                //    mouse.InstantLeftClick(1265, 291, withSleep: true);
+                //    Thread.Sleep(100);
+                //    mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, noClick: true);
+                //}
 
                //if (IsKeyPressed(0x45) && !isPaused) // 0x43 is the virtual key code for the E key
                //{

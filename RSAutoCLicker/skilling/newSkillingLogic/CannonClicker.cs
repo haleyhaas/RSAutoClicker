@@ -30,7 +30,7 @@ namespace RsAutoClicker
 
             _actions = new List<IAction>
             {
-                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 12_000)
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 82_000)
             };
         }
 
@@ -48,14 +48,14 @@ namespace RsAutoClicker
 
             base.Do();
                         
-            //UseFood(1239, 745);
-            //UsePrayerPots(1236, 745);
+            //UseFood(1258, 742);
+            //UsePrayerPots(1253, 784);
             _counter++;
         }
 
         private void UseFood(int x, int y)
         {
-            var inc = 5;
+            var inc = 4;
             if (_counter > 0 && _counter % inc == 0)
             {
                 _mouseHandler.LeftClick(x + (_potionPosX * 40), y + (_potionPosY * 40));
@@ -75,7 +75,7 @@ namespace RsAutoClicker
 
         private void UsePrayerPots(int x, int y)
         {
-            var inc = 6;
+            var inc = 5;
 
             if (_counter > 0 && _counter % inc == 0)
             {

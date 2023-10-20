@@ -2,15 +2,10 @@
 using System.Diagnostics;
 
 Thread.Sleep(2000);
-var script = SkillActivator.Activate(typeof(AgilitySeers));
+var script = SkillActivator.Activate(typeof(WorldHopper));
 var stopwatch = Stopwatch.StartNew();
 
-for(var i = 0; i < 267; i++)
+while (stopwatch.ElapsedMilliseconds < 21_600_000) // 6 hours
 {
     script.Do();
 }
-
-//while (stopwatch.ElapsedMilliseconds < 21_600_000) // 6 hours
-//{
-//    script.Do();
-//}
