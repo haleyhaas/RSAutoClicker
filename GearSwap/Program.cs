@@ -26,8 +26,9 @@ namespace KeyPressListener
 
                 if (IsKeyPressed(0x52) && !isPaused) // 0x52 is the virtual key code for the R key
                 {
-                    //inventoryHelper.InventoryClear();
-                    inventoryHelper.GearSwap(gearSwapX, gearSwapY, swapCount);
+                    
+                    inventoryHelper.InventoryClear();
+                    //inventoryHelper.GearSwap(gearSwapX, gearSwapY, swapCount);
                 }
 
                 if (IsKeyPressed(0x46) && !isPaused) // 0x46 is the virtual key code for the F key
