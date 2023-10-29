@@ -23,7 +23,7 @@ namespace RsAutoClicker
 
             var p = _mouseHandler.CursorPos();
 
-            _mouseHandler.LeftClick(1086, 246);
+            _mouseHandler.LeftClick(919, 305);
             Thread.Sleep(6000);
 
             if(_stopwatch.ElapsedMilliseconds > 45_000)

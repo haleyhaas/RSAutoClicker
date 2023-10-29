@@ -21,7 +21,7 @@
 
                 var moveCounter = 0;
                 var yCounter = 0;
-                for (var i = 0; i < 23; i++)
+                for (var i = 0; i < 28; i++)
                 {
                     _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
                     if (moveCounter <= 2)

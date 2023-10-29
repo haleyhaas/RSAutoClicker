@@ -30,7 +30,7 @@ namespace RsAutoClicker
 
             _actions = new List<IAction>
             {
-                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 400)
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 30_600)
             };
         }
 

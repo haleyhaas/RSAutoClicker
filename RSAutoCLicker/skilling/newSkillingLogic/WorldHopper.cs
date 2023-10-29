@@ -37,13 +37,13 @@ namespace RsAutoClicker
                 return;
             }
 
-            _mouseHandler.InstantLeftClick(1552, 185 + increment * _counter);
+            _mouseHandler.InstantLeftClick(1534, 210 + increment * _counter);
             Thread.Sleep(50);
-            _mouseHandler.InstantLeftClick(1552, 185 + increment * _counter);
+            _mouseHandler.InstantLeftClick(1534, 210 + increment * _counter);
 
             _counter++;
 
-            if(_counter >= 20)
+            if(_counter >= 30)
             {
                 _counter = 0;
             }
