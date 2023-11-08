@@ -23,17 +23,25 @@ namespace RsAutoClicker
 
             var p = _mouseHandler.CursorPos();
 
-            _mouseHandler.LeftClick(919, 305);
-            Thread.Sleep(6000);
+            _mouseHandler.LeftClick(888, 552, withSleep: true);
 
-            if(_stopwatch.ElapsedMilliseconds > 45_000)
+            if(_stopwatch.ElapsedMilliseconds > 60_000)
             {
-                _inventoryHelper.InventoryClear();
-                _stopwatch.Reset();
-                _stopwatch.Start();
+                // bank
+                _mouseHandler.LeftClick(1367, 523, withSleep: true);
+                Thread.Sleep(5000);
+                _mouseHandler.LeftClick(1029, 764, withSleep: true);
+                Thread.Sleep(1000);
+
+                // return to tree
+                _mouseHandler.LeftClick(503, 559, withSleep: true);
+                Thread.Sleep(6000);
+
+                _stopwatch.Restart();
             }
 
-            Thread.Sleep(1600);            
+            Thread.Sleep(6000);
+
         }
     }
 }

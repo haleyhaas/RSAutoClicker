@@ -1,4 +1,6 @@
-﻿namespace RsAutoClicker
+﻿using RSAutoCLicker;
+
+namespace RsAutoClicker
 {
     /// <summary>
     /// </summary>
@@ -16,21 +18,34 @@
         {
             Console.WriteLine($"Doing {nameof(Herblore)}");
             var p = _mouseHandler.CursorPos();
+            var unfinished = false;
+
+            var harralander = new POINT();
+            harralander.X = unfinished ? 718 : 718+90;
+            harralander.Y = 359;
+
+            var ranarr = new POINT();
+            ranarr.X = harralander.X;
+            ranarr.Y = harralander.Y + 40;
+
+            var vial = new POINT();
+            vial.X = unfinished ? 761 : 761 + 100;
+            vial.Y = unfinished ? 286 : ranarr.Y; // change here
 
             // bank
-            _mouseHandler.LeftClick(956, 480, true, true);
+            _mouseHandler.LeftClick(947, 429, true, true);
             Thread.Sleep(1000);
 
             // deposit
             _mouseHandler.LeftClick(1021, 767, withSleep: true);
             Thread.Sleep(800);
 
-            // withdraw
-            _mouseHandler.LeftClick(810, 535, withSleep: true);
+            // withdraw herb
+            _mouseHandler.LeftClick(ranarr.X, ranarr.Y, withSleep: true); // change here
             Thread.Sleep(200);
 
-            // withdraw 2
-            _mouseHandler.LeftClick(860, 535, withSleep: true);
+            // withdraw vial
+            _mouseHandler.LeftClick(vial.X, vial.Y, withSleep: true);
             Thread.Sleep(200);
 
             // close bank
@@ -49,8 +64,14 @@
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
 
             // sleep
-            //Thread.Sleep(9_000); // unfinished pots
-            Thread.Sleep(17_500); // making finished pots
+            if (unfinished)
+            {
+                Thread.Sleep(9_000); // unfinished pots
+            }
+            else
+            {
+                Thread.Sleep(17_500); // making finished pots
+            }
         }
     }
 }
