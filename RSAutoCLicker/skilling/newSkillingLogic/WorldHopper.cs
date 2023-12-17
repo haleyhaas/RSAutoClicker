@@ -43,10 +43,12 @@ namespace RsAutoClicker
 
             _counter++;
 
-            if(_counter >= 30)
+            if(_counter >= 10)
             {
                 _counter = 0;
             }
+
+            Thread.Sleep(10_000);
         }     
     }
 }

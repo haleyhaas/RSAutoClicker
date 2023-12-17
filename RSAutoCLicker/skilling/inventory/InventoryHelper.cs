@@ -21,7 +21,7 @@
 
                 var moveCounter = 0;
                 var yCounter = 0;
-                for (var i = 0; i < 28; i++)
+                for (var i = 0; i < 26; i++)
                 {
                     _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
                     if (moveCounter <= 2)
@@ -64,7 +64,6 @@
             }
            
             _mouseHandler.InstantLeftClick(pos.X, pos.Y, noClick: true);
-
         }
 
         public void PraySwap(int bookX, int bookY, string type)

@@ -6,9 +6,11 @@
     public class Construction : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
+        private readonly KeyboardHandler _keyboardHandler;
         public Construction(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
+            _keyboardHandler = new KeyboardHandler();
         }
 
         public void Do()
@@ -16,72 +18,73 @@
             Console.WriteLine($"Doing {nameof(Construction)}");
 
             var p = _mouseHandler.CursorPos();
-
+            
             // teleport to house
-            _mouseHandler.LeftClick(1072, 542, true, true);
+            _mouseHandler.LeftClick(1316, 773, true, true);
             Thread.Sleep(4500);
 
             // click settings
-            _mouseHandler.LeftClick(1161, 840, true, true);
+            _mouseHandler.LeftClick(1338, 938, true, true);
 
             // click house settings
-            _mouseHandler.LeftClick(1160, 715, true, true);
+            _mouseHandler.LeftClick(1335, 847, true, true);
             Thread.Sleep(500);
 
             // building mode
-            _mouseHandler.LeftClick(1190, 595, true, true);
+            _mouseHandler.LeftClick(1368, 730, true, true);
             Thread.Sleep(1800);
 
             // move to table
-            _mouseHandler.LeftClick(865, 638, true, true);
+            _mouseHandler.LeftClick(1017, 483, true, true);
             Thread.Sleep(2500);
                        
 
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < 7; i++)
             {
                 // right click build
-                _mouseHandler.RightClick(852, 537, true, true);
+                _mouseHandler.RightClick(974, 555, true, true);
                 Thread.Sleep(250);
                 // left click build
-                _mouseHandler.LeftClick(848, 588, true, true);
+                _mouseHandler.LeftClick(966, 610, true, true);
+                Thread.Sleep(1000);
 
-                // left click build table
-                _mouseHandler.LeftClick(776, 395, true, true);
-                Thread.Sleep(2000);
+                _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.KEY_3);
+                Thread.Sleep(1600);
 
-                // right click remove
-                _mouseHandler.RightClick(852, 537, true, true);
+                // right click build
+                _mouseHandler.RightClick(974, 555, true, true);
                 Thread.Sleep(250);
-                // left click remove
-                _mouseHandler.LeftClick(848, 588, true, true);
-                Thread.Sleep(1200);
+                // left click build
+                _mouseHandler.LeftClick(968, 625, true, true);
+                Thread.Sleep(1800);
 
-                // left click confirm
-                _mouseHandler.LeftClick(715, 763, true, true);
-                Thread.Sleep(2400);
+                // confirm
+                _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.KEY_1);
             }
 
-            // click equipment
-            _mouseHandler.LeftClick(1156, 802, true, true);
+            Thread.Sleep(1000);
+
+            // inventory
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.F1);
             
-            // left click edgeville
-            _mouseHandler.LeftClick(1137, 581, true, true);
+            // teleport to fishing guild
+            _mouseHandler.LeftClick(1335, 714, true, true);
             Thread.Sleep(2800);
 
-            // click inventory
-            _mouseHandler.LeftClick(1126, 801, true, true);
+            // spell book
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.F3);
 
             // bank
-            _mouseHandler.LeftClick(989, 297, true, true);
-            Thread.Sleep(3800);
+            _mouseHandler.LeftClick(647, 263, true, true);
+            Thread.Sleep(7200);
 
             // withdraw
-            _mouseHandler.LeftClick(900, 488, true, true);
+            _mouseHandler.LeftClick(999, 396, true, true);
             Thread.Sleep(500);
 
             // close bank
-            _mouseHandler.LeftClick(963, 160, true, true);
-            Thread.Sleep(500);
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
+            Thread.Sleep(600);
 
         }
     }

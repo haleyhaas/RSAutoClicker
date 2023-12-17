@@ -1,4 +1,6 @@
 ﻿using RsAutoClicker;
+using RSAutoCLicker;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -17,7 +19,7 @@ namespace KeyPressListener
 
             var gearSwapX = 1259;
             var gearSwapY = 677;
-            var swapCount = 7;
+            var swapCount = 5;
 
             while (true)
             {
@@ -26,8 +28,8 @@ namespace KeyPressListener
 
                 if (IsKeyPressed(0x52) && !isPaused) // 0x52 is the virtual key code for the R key
                 {
-                    
-                    inventoryHelper.InventoryClear();
+                    RunePouches(cursorPos);
+                    //inventoryHelper.InventoryClear();
                     //inventoryHelper.GearSwap(gearSwapX, gearSwapY, swapCount);
                 }
 
@@ -55,6 +57,17 @@ namespace KeyPressListener
         private static bool IsKeyPressed(int virtualKeyCode)
         {
             return (GetAsyncKeyState(virtualKeyCode) & 0x8000) != 0;
+        }
+
+        private static void RunePouches(POINT cursorPos)
+        {
+            var mouse = new MouseHandler();
+            mouse.InstantLeftClick(1250, 675);
+            Thread.Sleep(100);
+            mouse.InstantLeftClick(1250, 715);
+            Thread.Sleep(300);
+
+            mouse.InstantLeftClick(cursorPos.X, cursorPos.Y, withSleep: true);
         }
     }
 }

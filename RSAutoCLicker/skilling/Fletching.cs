@@ -24,10 +24,13 @@
                 return;
             }
 
-            _mouseHandler.LeftClick(1287, 661);
+            _mouseHandler.LeftClick(1252, 673);
             Thread.Sleep(75);
-            _mouseHandler.LeftClick(1287, 700);
+            _mouseHandler.LeftClick(1292, 673);
+            Thread.Sleep(1000);
 
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
+            Thread.Sleep(12_000);
         }
     }
 }

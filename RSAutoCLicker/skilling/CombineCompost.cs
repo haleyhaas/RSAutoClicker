@@ -18,7 +18,7 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(836, 417, true, true);
+            _mouseHandler.LeftClick(953, 346, true, true);
             Thread.Sleep(1000);
 
             // deposit

@@ -41,10 +41,10 @@ namespace RsAutoClicker
                 screenshot.Save(tempFilePath);
 
                 // Open the screenshot in Paint.NET
-                //OpenInPaintDotNet(tempFilePath);
+                OpenInPaintDotNet(tempFilePath);
 
                 // todo -> doesnt work yet
-                FindColorCoordinates(tempFilePath);                
+                //FindColorCoordinates(tempFilePath);                
 
                 Thread.Sleep(1_000);
             }

@@ -18,7 +18,7 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(936, 471, true, true);
+            _mouseHandler.LeftClick(953, 346, true, true);
             Thread.Sleep(1000);
 
             // deposit
@@ -26,7 +26,7 @@
             Thread.Sleep(800);
 
             // withdraw compost
-            _mouseHandler.LeftClick(952, 393);
+            _mouseHandler.LeftClick(957, 393);
             Thread.Sleep(200);
             
             // close bank
