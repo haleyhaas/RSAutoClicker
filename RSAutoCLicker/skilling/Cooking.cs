@@ -24,19 +24,21 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(570, 824);
+            _mouseHandler.LeftClick(958, 862);
             Thread.Sleep(2200);
 
             // deposit
-            _mouseHandler.LeftClick(1018, 768);
+            _mouseHandler.LeftClick(1128, 777);
             Thread.Sleep(200);
 
             // withdraw
-            _mouseHandler.LeftClick(807, 287);
+            _mouseHandler.LeftClick(819, 257);
             Thread.Sleep(200);
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
+            Thread.Sleep(1000);
 
             // cook
-            _mouseHandler.LeftClick(1291, 338, isFast: true);
+            _mouseHandler.LeftClick(1134, 331, isFast: true);
             Thread.Sleep(2200);
 
             // make all
