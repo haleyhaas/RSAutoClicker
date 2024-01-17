@@ -29,41 +29,40 @@ namespace RsAutoClicker
             var p = _mouseHandler.CursorPos();
 
             // click fairy ring
-            _mouseHandler.LeftClick(1064, 652, withSleep: true);
+            _mouseHandler.LeftClick(834, 683, withSleep: true);
             Thread.Sleep(3200);
 
             // click destination DJR
-            _mouseHandler.LeftClick(1373, 787);
+            _mouseHandler.LeftClick(1489, 857);
             Thread.Sleep(2000);
 
             // click travel
-            _mouseHandler.LeftClick(946, 591);
+            _mouseHandler.LeftClick(704, 557);
             Thread.Sleep(3800);
 
             // click bank
-            _mouseHandler.LeftClick(1459, 734, withSleep: true);
+            _mouseHandler.LeftClick(1602, 917, withSleep: true);
             Thread.Sleep(10_800);
 
             // deposit
-            _mouseHandler.LeftClick(1362, 719);
-            Thread.Sleep(1000);
-            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
+            _mouseHandler.LeftClick(1475, 789);
+            Thread.Sleep(500);
 
             // click fairy ring
-            _mouseHandler.LeftClick(711, 433, withSleep: true);
+            _mouseHandler.LeftClick(323, 290, withSleep: true);
             Thread.Sleep(10_800);
 
             // click destination DKP
-            _mouseHandler.LeftClick(1370, 756);
+            _mouseHandler.LeftClick(1484, 824);
             Thread.Sleep(2000);
 
             // click travel
-            _mouseHandler.LeftClick(946, 591);
+            _mouseHandler.LeftClick(704, 557);
             Thread.Sleep(3800);
 
             // fish for full inventory
-            _mouseHandler.LeftClick(1041, 497, withSleep: true);
-            Thread.Sleep(105_000);
+            _mouseHandler.LeftClick(814, 424, withSleep: true);
+            Thread.Sleep(97_000);
         }
     }
 }

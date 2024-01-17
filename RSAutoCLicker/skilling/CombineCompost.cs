@@ -18,21 +18,21 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(953, 346, true, true);
+            _mouseHandler.LeftClick(844, 293, true, true);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(1023, 767, withSleep: true);
+            _mouseHandler.LeftClick(895, 822, withSleep: true);
             Thread.Sleep(800);
 
             // withdraw 4 compost pots
-            _mouseHandler.LeftClick(1004, 358);
+            _mouseHandler.LeftClick(875, 281);
             Thread.Sleep(200);
 
             for (var i = 0; i < 4; i++)
             {
                 // withdraw 16 compost
-                _mouseHandler.LeftClick(1003, 396);
+                _mouseHandler.LeftClick(879, 314);
                 Thread.Sleep(200);
             }
 
@@ -43,11 +43,11 @@
             for (var i = 0; i < 19; i++)
             {
                 // use 1
-                _mouseHandler.LeftClick(1383, 680);
+                _mouseHandler.LeftClick(1602, 753);
                 Thread.Sleep(200);
 
                 // use 2
-                _mouseHandler.LeftClick(1384, 822);
+                _mouseHandler.LeftClick(1603, 896);
                 Thread.Sleep(200);
             }
 

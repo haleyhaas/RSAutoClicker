@@ -18,15 +18,15 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(953, 346, true, true);
+            _mouseHandler.LeftClick(845, 313, true, true);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(1255, 714, withSleep: true);
+            _mouseHandler.LeftClick(1477, 785, withSleep: true);
             Thread.Sleep(800);
 
             // withdraw compost
-            _mouseHandler.LeftClick(957, 393);
+            _mouseHandler.LeftClick(828, 320);
             Thread.Sleep(200);
             
             // close bank
@@ -34,11 +34,11 @@
             Thread.Sleep(600);
 
             // use 1
-            _mouseHandler.LeftClick(1257, 677);
+            _mouseHandler.LeftClick(1479, 755);
             Thread.Sleep(200);
 
             // use 2
-            _mouseHandler.LeftClick(1299, 677);
+            _mouseHandler.LeftClick(1479, 785);
             Thread.Sleep(800);
 
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);

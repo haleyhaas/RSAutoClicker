@@ -29,25 +29,25 @@ namespace RsAutoClicker
             var p = _mouseHandler.CursorPos();
 
             // deposit
-            _mouseHandler.LeftClick(1252, 717);
+            _mouseHandler.LeftClick(1759, 758);
 
             // withdraw
-            _mouseHandler.LeftClick(809, 501, isFast: true);
+            _mouseHandler.LeftClick(999, 355, isFast: true);
             Thread.Sleep(200);
 
             // go to sawmill
-            _mouseHandler.LeftClick(1240, 424);
+            _mouseHandler.LeftClick(1459, 360);
             Thread.Sleep(33_000);
 
             // talk to sawmill for plank
-            _mouseHandler.LeftClick(922, 563, withSleep: true);
+            _mouseHandler.LeftClick(903, 533, withSleep: true);
             Thread.Sleep(2000);
 
             // buy planks
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
 
             // return to bank
-            _mouseHandler.LeftClick(476, 773, withSleep: true);
+            _mouseHandler.LeftClick(133, 808, withSleep: true);
             Thread.Sleep(33_000);
         }
     }

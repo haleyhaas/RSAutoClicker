@@ -1,4 +1,5 @@
 ﻿using RSAutoCLicker;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace RsAutoClicker
@@ -13,6 +14,8 @@ namespace RsAutoClicker
 
         private readonly IMouseHandler _mouseHandler;
         private readonly KeyboardHandler _keyboardHandler;
+        private readonly InventoryHelper _inventoryHelper;
+        private readonly Stopwatch _stopwatch;
         private POINT _position;
         private int _counter;
         private int _potionPosX;
@@ -23,14 +26,16 @@ namespace RsAutoClicker
         {
             _mouseHandler = mouseHandler;
             _keyboardHandler = new KeyboardHandler();
+            _inventoryHelper = new InventoryHelper();
             _position = _mouseHandler.CursorPos();
             _counter = 0;
             _potionPosX = 0;
             _potionPosY = 0;
-
+            _stopwatch = new Stopwatch();
+            _stopwatch.Start(); 
             _actions = new List<IAction>
             {
-                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 30_600)
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 300)
             };
         }
 
@@ -38,7 +43,7 @@ namespace RsAutoClicker
         {
             var p = _mouseHandler.CursorPos();
 
-            _isPaused = _keyboardHandler.CheckPause();
+             _isPaused = _keyboardHandler.CheckPause();
 
             if(_isPaused )
             {
@@ -48,8 +53,12 @@ namespace RsAutoClicker
 
             base.Do();
                         
-            //UseFood(1258, 742);
-            //UsePrayerPots(1253, 784);
+            if(_stopwatch.ElapsedMilliseconds > 30_000)
+            {
+                _mouseHandler.LeftClick(609, 861, isFast: true);
+                _inventoryHelper.InventoryClear();
+                _stopwatch.Restart();
+            }
             _counter++;
         }
 
