@@ -20,27 +20,29 @@
             var p = _mouseHandler.CursorPos();
 
             // bank
-            _mouseHandler.LeftClick(940, 843);
+            _mouseHandler.LeftClick(808, 361);
             Thread.Sleep(600);
 
             // deposit
-            _mouseHandler.LeftClick(1256, 714);
+            _mouseHandler.LeftClick(1479, 784);
             Thread.Sleep(300);            
 
             // withdraw
-            _mouseHandler.LeftClick(1003, 358);
+            _mouseHandler.LeftClick(831, 355);
+            Thread.Sleep(300);
+            _mouseHandler.LeftClick(876, 355);
             Thread.Sleep(300);
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
             Thread.Sleep(300);
 
-            for (var i = 0; i < 27; i++)
+            for (var i = 0; i < 9; i++)
             {
                 // superheat
-                _mouseHandler.LeftClick(1250, 810);
+                _mouseHandler.LeftClick(1472, 886);
                 Thread.Sleep(300);
 
                 // item
-                _mouseHandler.LeftClick(1383, 892);
+                _mouseHandler.LeftClick(1603, 966);
                 Thread.Sleep(1200);
             }
         }

@@ -17,7 +17,7 @@
 
             var p = _mouseHandler.CursorPos();
 
-            _mouseHandler.LeftClick(1334, 816);
+            _mouseHandler.LeftClick(p.X, p.Y);
             Thread.Sleep(1600);            
         }
     }

@@ -17,26 +17,25 @@
 
         public void Do()
         {
-            Console.WriteLine($"Doing {nameof(BuyFish)}");
             var p = _mouseHandler.CursorPos();
 
             for (var i = 0; i < 2; i++)
             {
                 // click vendor
-                _mouseHandler.LeftClick(615, 305, true, true);
+                _mouseHandler.LeftClick(356, 221, true, true);
                 Thread.Sleep(8_500);
 
                 // buy ore
-                _mouseHandler.LeftClick(898, 382, true, true);
+                _mouseHandler.LeftClick(829, 360, true, true);
                 Thread.Sleep(400);
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
 
                 // click bank
-                _mouseHandler.LeftClick(1386, 892, true, true);
+                _mouseHandler.LeftClick(1357, 879, true, true);
                 Thread.Sleep(8_500);
 
                 // deposit ore
-                _mouseHandler.LeftClick(1292, 673, true, true);
+                _mouseHandler.LeftClick(1480, 789, true, true);
                 Thread.Sleep(400);
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.ESCAPE);
             }

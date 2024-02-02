@@ -35,7 +35,7 @@ namespace RsAutoClicker
             _stopwatch.Start(); 
             _actions = new List<IAction>
             {
-                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 300)
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 30_000)
             };
         }
 
@@ -51,14 +51,8 @@ namespace RsAutoClicker
                 return;
             }
 
-            base.Do();
-                        
-            if(_stopwatch.ElapsedMilliseconds > 30_000)
-            {
-                _mouseHandler.LeftClick(609, 861, isFast: true);
-                _inventoryHelper.InventoryClear();
-                _stopwatch.Restart();
-            }
+            base.Do();                       
+            
             _counter++;
         }
 
