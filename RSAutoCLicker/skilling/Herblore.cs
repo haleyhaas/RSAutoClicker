@@ -18,34 +18,30 @@ namespace RsAutoClicker
         {
             Console.WriteLine($"Doing {nameof(Herblore)}");
             var p = _mouseHandler.CursorPos();
-            var unfinished = false;
+            var posFromDwarfWeed = 5;
 
-            var harralander = new POINT();
-            harralander.X = unfinished ? 718 : 718+90;
-            harralander.Y = 359;
+            var unfinishedPot = new POINT();
+            unfinishedPot.X =  733;
+            unfinishedPot.Y = 572 - (posFromDwarfWeed * 35);
 
-            var ranarr = new POINT();
-            ranarr.X = harralander.X;
-            ranarr.Y = harralander.Y + 40;
-
-            var vial = new POINT();
-            vial.X = unfinished ? 761 : 761 + 100;
-            vial.Y = unfinished ? 286 : ranarr.Y; // change here
+            var secondary = new POINT();
+            secondary.X = 688;
+            secondary.Y = 567 - (posFromDwarfWeed * 35);
 
             // bank
-            _mouseHandler.LeftClick(947, 429, true, true);
+            _mouseHandler.LeftClick(827, 398, true, true);
             Thread.Sleep(1000);
 
             // deposit
-            _mouseHandler.LeftClick(1021, 767, withSleep: true);
+            _mouseHandler.LeftClick(897, 821, withSleep: true);
             Thread.Sleep(800);
 
-            // withdraw herb
-            _mouseHandler.LeftClick(ranarr.X, ranarr.Y, withSleep: true); // change here
+            // withdraw secondary
+            _mouseHandler.LeftClick(secondary.X, secondary.Y, withSleep: true); // change here
             Thread.Sleep(200);
 
-            // withdraw vial
-            _mouseHandler.LeftClick(vial.X, vial.Y, withSleep: true);
+            // withdraw unfinished pot
+            _mouseHandler.LeftClick(unfinishedPot.X, unfinishedPot.Y, withSleep: true);
             Thread.Sleep(200);
 
             // close bank
@@ -53,25 +49,19 @@ namespace RsAutoClicker
             Thread.Sleep(600);
 
             // use 1
-            _mouseHandler.LeftClick(1256, 790, withSleep: true);
+            _mouseHandler.LeftClick(1480, 863, withSleep: true);
             Thread.Sleep(200);
 
             // use 2
-            _mouseHandler.LeftClick(1256, 820, withSleep: true);
+            _mouseHandler.LeftClick(1480, 897, withSleep: true);
             Thread.Sleep(800);
 
             // make all
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
 
             // sleep
-            if (unfinished)
-            {
-                Thread.Sleep(9_000); // unfinished pots
-            }
-            else
-            {
-                Thread.Sleep(17_500); // making finished pots
-            }
+            Thread.Sleep(17_500); // making finished pots
+
         }
     }
 }

@@ -17,31 +17,31 @@
             Console.WriteLine($"Doing {nameof(MineSandstone)}");
             var p = _mouseHandler.CursorPos();
 
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < 6; i++)
             {
                 // ore 1
-                _mouseHandler.LeftClick(906, 615, true, withSleep: true);
+                _mouseHandler.LeftClick(913, 600, true, withSleep: true);
                 Thread.Sleep(5420);
 
                 // ore 2
-                _mouseHandler.LeftClick(779, 566, true, withSleep: true);
+                _mouseHandler.LeftClick(782, 575, true, withSleep: true);
                 Thread.Sleep(3420);
 
                 // ore 3
-                _mouseHandler.LeftClick(734, 523, true, withSleep: true);
+                _mouseHandler.LeftClick(733, 544, true, withSleep: true);
                 Thread.Sleep(3250);
 
-                // ore 3
-                _mouseHandler.LeftClick(787, 489, true, withSleep: true);
+                // ore 4
+                _mouseHandler.LeftClick(775, 490, true, withSleep: true);
                 Thread.Sleep(5250);
             }
             // deposit
-            _mouseHandler.LeftClick(61, 786, true);
+            _mouseHandler.LeftClick(96, 848, true);
             Thread.Sleep(8000);
 
             // return
-            _mouseHandler.LeftClick(1265, 380, true, withSleep: true);
-            Thread.Sleep(9000);
+            _mouseHandler.LeftClick(1213, 345, true, withSleep: true);
+            Thread.Sleep(8300);
         }
     }
 }

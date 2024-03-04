@@ -20,7 +20,7 @@
             var p = _mouseHandler.CursorPos();
             
             // teleport to house
-            _mouseHandler.LeftClick(1545, 847, true, true);
+            _mouseHandler.LeftClick(1473, 845, true, true);
             Thread.Sleep(4500);
             
             // click settings
@@ -35,28 +35,28 @@
             Thread.Sleep(1800);
             
             // move to table
-            _mouseHandler.LeftClick(963, 432, true, true);
+            _mouseHandler.LeftClick(1068, 480, true, true);
             Thread.Sleep(2500);
-                       
+                      
 
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < 8; i++)
             {
                 // right click build
-                _mouseHandler.RightClick(870, 513, true, true);
+                _mouseHandler.RightClick(881, 502, true, true);
                 Thread.Sleep(250);
                 // left click build
-                _mouseHandler.LeftClick(838, 571, true, true);
+                _mouseHandler.LeftClick(886, 558, true, true);
                 Thread.Sleep(1000);
 
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.KEY_3);
                 Thread.Sleep(1600);
 
-                // right click build
-                _mouseHandler.RightClick(870, 513, true, true);
+                // right click
+                _mouseHandler.RightClick(903, 490, true, true);
                 Thread.Sleep(250);
-                // left click build
-                _mouseHandler.LeftClick(846, 585, true, true);
-                Thread.Sleep(1800);
+                // left click remove
+                _mouseHandler.LeftClick(889, 549, true, true);
+                Thread.Sleep(1200);
 
                 // confirm
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.KEY_1);
@@ -68,18 +68,18 @@
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.F1);
             
             // teleport to fishing guild
-            _mouseHandler.LeftClick(1477, 787, true, true);
+            _mouseHandler.LeftClick(1559, 752, true, true);
             Thread.Sleep(2800);
 
             // spell book
             _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.F3);
 
             // bank
-            _mouseHandler.LeftClick(467, 65, true, true);
+            _mouseHandler.LeftClick(937, 235, true, true);
             Thread.Sleep(7200);
 
             // withdraw
-            _mouseHandler.LeftClick(878, 353, true, true);
+            _mouseHandler.LeftClick(876, 391, true, true);
             Thread.Sleep(500);
 
             // close bank

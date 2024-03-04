@@ -12,34 +12,32 @@
         }
         public void InventoryClear()
         {
+            var axisBagSlotMove = 38;
+
+            // bottom right most slot
+            var bottomRightSlotX = 1598;
+            var bottomRightSlotY = 926;
+
+            var moveCounter = 0;
+            var yCounter = 0;
+            for (var i = 0; i < 10; i++)
             {
-                var axisBagSlotMove = 38;
-
-                // bottom right most slot
-                var bottomRightSlotX = 1594;
-                var bottomRightSlotY = 935;
-
-                var moveCounter = 0;
-                var yCounter = 0;
-                for (var i = 0; i < 13; i++)
+                _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
+                if (moveCounter <= 2)
                 {
-                    _mouseHandler.LeftClick(bottomRightSlotX, bottomRightSlotY);
-                    if (moveCounter <= 2)
-                    {
-                        bottomRightSlotX -= axisBagSlotMove;
-                        moveCounter++;
-                    }
-                    else
-                    {
-                        bottomRightSlotX += axisBagSlotMove * 3;
-                        bottomRightSlotY -= axisBagSlotMove;
-                        moveCounter = 0;
-                        yCounter++;
-                    }
+                    bottomRightSlotX -= axisBagSlotMove;
+                    moveCounter++;
+                }
+                else
+                {
+                    bottomRightSlotX += axisBagSlotMove * 3;
+                    bottomRightSlotY -= axisBagSlotMove;
+                    moveCounter = 0;
+                    yCounter++;
                 }
             }
         }
-    
+
         public void GearSwap(int x, int y, int swapNumber = 6)
         {
             Console.WriteLine("Gear Swap");

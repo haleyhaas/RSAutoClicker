@@ -4,11 +4,11 @@ namespace RsAutoClicker
 {
     /// <summary>
     /// </summary>
-    public class SuperglassMake : IScripter
+    public class Glassblowing : IScripter
     {
         private readonly IMouseHandler _mouseHandler;
         private readonly KeyboardHandler _keyboardHandler;
-        public SuperglassMake(IMouseHandler mouseHandler)
+        public Glassblowing(IMouseHandler mouseHandler)
         {
             _mouseHandler = mouseHandler;
             _keyboardHandler = new KeyboardHandler();
@@ -24,14 +24,9 @@ namespace RsAutoClicker
 
             // deposit
             _mouseHandler.LeftClick(1482, 751, withSleep: true);
-
-            // withdraw seaweed
-            _mouseHandler.LeftClick(877, 500, withSleep: true); // change here
-            _mouseHandler.LeftClick(877, 500, withSleep: true); // change here
-            _mouseHandler.LeftClick(877, 500, withSleep: true); // change here
-
-            // withdraw sand
-            _mouseHandler.LeftClick(833, 497, withSleep: true);
+                        
+            // withdraw
+            _mouseHandler.LeftClick(784, 494, withSleep: true);
             Thread.Sleep(200);
 
             // close bank
@@ -39,8 +34,13 @@ namespace RsAutoClicker
             Thread.Sleep(200);
 
             // make glass
-            _mouseHandler.LeftClick(1547, 848, withSleep: true);
-            Thread.Sleep(1300);
+            _mouseHandler.LeftClick(1482, 758, withSleep: true);
+            _mouseHandler.LeftClick(1482, 788, withSleep: true);
+            Thread.Sleep(1000);
+
+            _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
+
+            Thread.Sleep(49_400);
 
         }
     }

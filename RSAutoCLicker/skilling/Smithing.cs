@@ -20,17 +20,17 @@
             var p = _mouseHandler.CursorPos();
 
             // deposit
-            _mouseHandler.LeftClick(1478, 789);
+            _mouseHandler.LeftClick(1523, 750);
             Thread.Sleep(500);
 
             // withdraw
-            _mouseHandler.LeftClick(877, 570);
-            //Thread.Sleep(100);
-            //_mouseHandler.LeftClick(1000, 355);
-            //Thread.Sleep(100);
+            _mouseHandler.LeftClick(638, 204);
+            Thread.Sleep(100);
+            _mouseHandler.LeftClick(687, 278); // gold bars
+            Thread.Sleep(100);
 
             // anvil/furance
-            _mouseHandler.LeftClick(1405, 355, true, true);
+            _mouseHandler.LeftClick(1403, 308, true, true);
             Thread.Sleep(5500);
 
             // make all
@@ -39,10 +39,10 @@
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);
                 Thread.Sleep(1);
             }
-            Thread.Sleep(11_000);
+            Thread.Sleep(24_000);
 
             // bank
-            _mouseHandler.LeftClick(216, 663, true, true);
+            _mouseHandler.LeftClick(272, 794, true, true);
             Thread.Sleep(5500);           
 
         }

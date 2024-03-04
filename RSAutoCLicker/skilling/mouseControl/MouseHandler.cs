@@ -132,7 +132,7 @@ namespace RsAutoClicker
             SetCursorPos(xpos, ypos);
             if (withSleep)
             {
-                Thread.Sleep(300);
+                Thread.Sleep(230);
             }
             if (!noClick)
             {

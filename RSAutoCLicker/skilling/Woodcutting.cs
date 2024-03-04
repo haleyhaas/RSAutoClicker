@@ -25,14 +25,14 @@ namespace RsAutoClicker
 
             var p = _mouseHandler.CursorPos();
 
-            _mouseHandler.LeftClick(811, 300, withSleep: true);
+            _mouseHandler.LeftClick(812, 328, withSleep: true);
 
             if(_stopwatch.ElapsedMilliseconds > 30_000)
             {
                 // fletch
-                _mouseHandler.LeftClick(1520, 750, withSleep: true);
+                _mouseHandler.LeftClick(1517, 750, withSleep: true);
                 Thread.Sleep(250);
-                _mouseHandler.LeftClick(1560, 750, withSleep: true);
+                _mouseHandler.LeftClick(1557, 750, withSleep: true);
                 Thread.Sleep(1200);
 
                 _keyboardHandler.Send(KeyboardHandler.ScanCodeShort.SPACE);

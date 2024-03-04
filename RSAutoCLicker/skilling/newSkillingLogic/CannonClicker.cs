@@ -16,6 +16,7 @@ namespace RsAutoClicker
         private readonly KeyboardHandler _keyboardHandler;
         private readonly InventoryHelper _inventoryHelper;
         private readonly Stopwatch _stopwatch;
+        private readonly Stopwatch _stopwatch2;
         private POINT _position;
         private int _counter;
         private int _potionPosX;
@@ -32,10 +33,12 @@ namespace RsAutoClicker
             _potionPosX = 0;
             _potionPosY = 0;
             _stopwatch = new Stopwatch();
+            _stopwatch2 = new Stopwatch();
             _stopwatch.Start(); 
+            _stopwatch2.Start();
             _actions = new List<IAction>
             {
-                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 30_000)
+                new AEvent(() => _mouseHandler.LeftClick(_position.X, _position.Y), 400)
             };
         }
 
@@ -53,6 +56,18 @@ namespace RsAutoClicker
 
             base.Do();                       
             
+            if(_stopwatch.ElapsedMilliseconds > 12_000)
+            {
+                _inventoryHelper.InventoryClear();
+                _stopwatch.Restart();
+            }
+
+            if(_stopwatch2.ElapsedMilliseconds > 900000)
+            {
+                _mouseHandler.LeftClick(430, 764);
+                _stopwatch2.Restart();
+            }
+
             _counter++;
         }
 

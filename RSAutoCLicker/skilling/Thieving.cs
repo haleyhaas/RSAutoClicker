@@ -35,7 +35,7 @@ namespace RsAutoClicker
 
             // ardy knights
             // pickpocket
-            _mouseHandler.LeftClick(1231, 298, isVeryFast: true);
+            _mouseHandler.LeftClick(1247, 372, isVeryFast: true);
             Thread.Sleep(150);
 
             if (_keyboardHandler.CheckPause())
@@ -47,14 +47,14 @@ namespace RsAutoClicker
             {
                 Thread.Sleep(1000);
                 // open bags
-                _mouseHandler.LeftClick(1471, 717, true, true);
+                _mouseHandler.LeftClick(1478, 712, true, true);
                 _counter = 0;
             }
 
             if (_stopwatch.ElapsedMilliseconds > 900000)
             {
                 // attack
-                _mouseHandler.LeftClick(459, 846, true, true);
+                _mouseHandler.LeftClick(372, 697, true, true);
                 _stopwatch.Restart();
             }
 
